@@ -1,0 +1,1505 @@
+/* ============================================
+   NEARBY ATTRACTIONS PAGE - TRADITIONAL STYLE
+   Dark maroon/brown theme with mandala art
+   ============================================ */
+
+/* CSS Variables for Traditional Theme - DARK MAROON COLORS */
+:root {
+    --traditional-maroon: #4a1516;
+    --traditional-dark-maroon: #2d0c0d;
+    --traditional-brown: #3d2422;
+    --traditional-deep: #1f0e0e;
+    --traditional-cream: #f5e6d3;
+    --traditional-gold: #c9973d;
+    --traditional-gold-dark: #a67c2e;
+    --traditional-copper: #9e6644;
+    --traditional-beige: #e8dcc8;
+    --traditional-sand: #ddc9a5;
+    --traditional-terracotta: #8b4532;
+}
+
+/* Body styling for nearby page - DARK MAROON TRADITIONAL THEME */
+body.nearby-page {
+    background: linear-gradient(180deg, 
+        #f5e6d3 0%, 
+        #e8dcc8 50%,
+        #f5e6d3 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Multiple Rotating Mandala Backgrounds */
+.rotating-mandala-bg {
+    display: none; /* Using multiple mandalas instead */
+}
+
+/* Mandala 1 - Top Right Corner - Anti-clockwise */
+.mandala-rotate-1 {
+    position: fixed;
+    top: -35%;
+    right: -20%;
+    width: 900px;
+    height: 900px;
+    background: url('img/m-bg-1.png') center/contain no-repeat;
+    animation: rotateMandala1 80s linear infinite reverse;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* Mandala 2 - Bottom Left Corner - Anti-clockwise */
+.mandala-rotate-2 {
+    position: fixed;
+    bottom: -35%;
+    left: -20%;
+    width: 900px;
+    height: 900px;
+    background: url('img/m-bg-1.png') center/contain no-repeat;
+    animation: rotateMandala2 80s linear infinite reverse;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* Mandala 3 - Center Small - Clockwise */
+.mandala-rotate-3 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    height: 350px;
+    transform: translate(-50%, -50%);
+    background: url('img/m-bg-1.png') center/contain no-repeat;
+    animation: rotateMandala3 60s linear infinite;
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 5;
+}
+
+@keyframes rotateMandala1 {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes rotateMandala2 {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes rotateMandala3 {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Overlay for better readability - below mandalas */
+body.nearby-page::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(180deg, 
+            rgba(245, 230, 211, 0.3) 0%, 
+            rgba(232, 220, 200, 0.25) 50%,
+            rgba(245, 230, 211, 0.3) 100%);
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* ============================================
+   MANDALA BACKGROUND PATTERNS
+   ============================================ */
+.mandala-bg-container {
+    display: none; /* Hidden - using rotating mandala instead */
+}
+
+.mandala-pattern {
+    position: absolute;
+    background-image: url('img/mandala.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.08;
+    animation: mandalaRotate 120s linear infinite;
+}
+
+.mandala-1 {
+    width: 800px;
+    height: 800px;
+    top: -200px;
+    right: -200px;
+    animation-duration: 180s;
+}
+
+.mandala-2 {
+    width: 600px;
+    height: 600px;
+    bottom: -150px;
+    left: -150px;
+    animation-direction: reverse;
+    animation-duration: 150s;
+}
+
+.mandala-3 {
+    width: 400px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-duration: 200s;
+    opacity: 0.05;
+}
+
+.mandala-4 {
+    width: 500px;
+    height: 500px;
+    top: 20%;
+    left: -100px;
+    animation-duration: 160s;
+    animation-direction: reverse;
+}
+
+@keyframes mandalaRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Spreading mandala effect on scroll */
+.mandala-spread {
+    display: none; /* Hidden - using rotating mandala instead */
+}
+
+/* Additional spreading corner mandalas */
+.mandala-bg-container::before {
+    content: '';
+    position: fixed;
+    top: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    background: url('img/mandala.png') center/contain no-repeat;
+    opacity: 0.04;
+    animation: mandalaRotate 200s linear infinite reverse;
+    pointer-events: none;
+}
+
+.mandala-bg-container::after {
+    content: '';
+    position: fixed;
+    bottom: -100px;
+    right: -100px;
+    width: 350px;
+    height: 350px;
+    background: url('img/mandala.png') center/contain no-repeat;
+    opacity: 0.05;
+    animation: mandalaRotate 180s linear infinite;
+    pointer-events: none;
+}
+
+/* ============================================
+   HEADER SECTION
+   ============================================ */
+.nearby-header {
+    position: relative;
+    z-index: 200;
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, 
+        rgba(74, 21, 22, 0.98) 0%, 
+        rgba(45, 12, 13, 0.98) 100%);
+    box-shadow: 0 4px 30px rgba(45, 12, 13, 0.4);
+}
+
+.back-btn {
+    position: absolute;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--traditional-cream);
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    padding: 10px 15px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(-5px);
+    color: var(--traditional-gold);
+}
+
+.back-btn svg {
+    transition: transform 0.2s ease;
+}
+
+.back-btn:hover svg {
+    transform: translateX(-3px);
+}
+
+.page-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--traditional-gold);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.page-title-tamil {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 0.95rem;
+    color: var(--traditional-cream);
+    margin-top: 5px;
+    opacity: 0.9;
+    letter-spacing: 1px;
+}
+
+/* ============================================
+   MAIN CONTENT AREA
+   ============================================ */
+.nearby-main {
+    position: relative;
+    z-index: 100;
+    padding: 40px 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ============================================
+   FEATURED SECTION
+   ============================================ */
+.featured-section {
+    margin-bottom: 50px;
+}
+
+.featured-card {
+    display: flex;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.95) 0%, 
+        rgba(245, 230, 211, 0.98) 100%);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 
+        0 20px 60px rgba(74, 21, 22, 0.2),
+        0 0 0 1px rgba(212, 168, 83, 0.3);
+    position: relative;
+    opacity: 0;
+    animation: slideUpFadeIn 0.35s ease-out forwards;
+}
+
+.featured-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        var(--traditional-maroon), 
+        var(--traditional-gold), 
+        var(--traditional-maroon));
+}
+
+.featured-image {
+    flex: 0 0 45%;
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+}
+
+.featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.featured-card:hover .featured-image img {
+    transform: scale(1.05);
+}
+
+.featured-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, 
+        rgba(74, 21, 22, 0.1) 0%, 
+        rgba(45, 12, 13, 0.2) 100%);
+    pointer-events: none;
+}
+
+.featured-content {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.featured-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--traditional-maroon), var(--traditional-dark-maroon));
+    color: var(--traditional-cream);
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    width: fit-content;
+    box-shadow: 0 4px 15px rgba(74, 21, 22, 0.3);
+}
+
+.featured-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--traditional-dark-maroon);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.featured-title-tamil {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 1.1rem;
+    color: var(--traditional-maroon);
+    margin-bottom: 20px;
+    opacity: 0.85;
+}
+
+.featured-description {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.05rem;
+    color: var(--traditional-brown);
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.featured-info {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    color: var(--traditional-brown);
+}
+
+.info-item svg {
+    color: var(--traditional-gold-dark);
+}
+
+/* ============================================
+   CATEGORY FILTERS
+   ============================================ */
+.category-section {
+    margin-bottom: 40px;
+}
+
+.category-filters {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50px;
+    box-shadow: 0 5px 20px rgba(74, 21, 22, 0.1);
+}
+
+.filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    background: transparent;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--traditional-brown);
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+.filter-btn:hover {
+    background: rgba(74, 21, 22, 0.1);
+    color: var(--traditional-maroon);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, var(--traditional-maroon), var(--traditional-dark-maroon));
+    color: var(--traditional-cream);
+    box-shadow: 0 4px 15px rgba(74, 21, 22, 0.3);
+}
+
+.filter-btn.active svg {
+    color: var(--traditional-gold);
+}
+
+/* ============================================
+   ATTRACTIONS GRID
+   ============================================ */
+.attractions-section {
+    margin-bottom: 60px;
+}
+
+.section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 35px;
+    position: relative;
+    opacity: 0;
+    animation: slideUpFadeIn 0.3s ease-out forwards;
+}
+
+.section-header-row {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--traditional-dark-maroon);
+    text-align: center;
+    margin-bottom: 0;
+    letter-spacing: 2px;
+}
+
+.section-title-tamil {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 1.5rem;
+    color: var(--traditional-maroon);
+    text-align: center;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+.section-subtitle {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    color: var(--traditional-brown);
+    text-align: center;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.section-header .category-filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 10px 18px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 40px;
+    box-shadow: 0 4px 15px rgba(74, 21, 22, 0.08);
+}
+
+.attractions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+@media (max-width: 900px) {
+    .attractions-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .attraction-card {
+        height: 280px;
+    }
+    
+    .card-content {
+        padding: 15px;
+    }
+    
+    .card-title {
+        font-size: 1rem;
+    }
+    
+    .card-description {
+        font-size: 0.75rem;
+        line-height: 1.4;
+    }
+}
+
+/* ============================================
+   ATTRACTION CARDS - SIDE CONTENT REVEAL
+   ============================================ */
+
+/* Slide up animation for cards */
+@keyframes slideUpFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.attraction-card {
+    background: linear-gradient(180deg, 
+        rgba(255, 255, 255, 0.98) 0%, 
+        rgba(245, 230, 211, 0.95) 100%);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 
+        0 10px 40px rgba(74, 21, 22, 0.12),
+        0 0 0 1px rgba(212, 168, 83, 0.2);
+    transition: all 0.25s ease-out;
+    position: relative;
+    cursor: pointer;
+    height: 320px;
+    display: flex;
+    flex-direction: row;
+    /* Initial hidden state - will be animated by JS */
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+/* First 2 cards animate immediately on page load */
+.attraction-card:nth-child(1),
+.attraction-card:nth-child(2) {
+    animation: slideUpFadeIn 0.35s ease-out forwards;
+}
+
+.attraction-card:nth-child(1) { animation-delay: 0.1s; }
+.attraction-card:nth-child(2) { animation-delay: 0.2s; }
+
+/* Remaining cards will be animated by scroll */
+.attraction-card.animate-in {
+    animation: slideUpFadeIn 0.3s ease-out forwards;
+}
+
+/* Traditional top border - appears on hover */
+.attraction-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        var(--traditional-maroon) 0%,
+        var(--traditional-gold) 50%,
+        var(--traditional-maroon) 100%);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    z-index: 10;
+}
+
+.attraction-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+        0 30px 80px rgba(74, 21, 22, 0.3),
+        0 0 0 3px rgba(212, 168, 83, 0.6);
+}
+
+.attraction-card:hover::before {
+    opacity: 1;
+}
+
+/* Card Image - Full width initially, shrinks to left on hover */
+.card-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.25s ease-out;
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+.attraction-card:hover .card-image {
+    width: 50%;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-out;
+}
+
+.attraction-card:hover .card-image img {
+    transform: scale(1.1);
+}
+
+/* Overlay with traditional pattern */
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, 
+        transparent 20%, 
+        rgba(45, 12, 13, 0.85) 100%);
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+.attraction-card:hover .card-overlay {
+    background: linear-gradient(180deg, 
+        rgba(74, 21, 22, 0.05) 0%, 
+        rgba(45, 12, 13, 0.3) 100%);
+}
+
+.distance-badge {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--traditional-maroon);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.15s ease;
+    z-index: 5;
+}
+
+.attraction-card:hover .distance-badge {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.distance-badge svg {
+    color: var(--traditional-gold-dark);
+}
+
+.category-badge {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.15s ease;
+    z-index: 5;
+}
+
+.attraction-card:hover .category-badge {
+    transform: translateY(-5px);
+}
+
+.category-badge.religious {
+    background: linear-gradient(135deg, #c0392b, #922b21);
+    color: white;
+}
+
+.category-badge.nature {
+    background: linear-gradient(135deg, #27ae60, #1e8449);
+    color: white;
+}
+
+.category-badge.heritage {
+    background: linear-gradient(135deg, #8e44ad, #6c3483);
+    color: white;
+}
+
+.category-badge.culture {
+    background: linear-gradient(135deg, #d35400, #a04000);
+    color: white;
+}
+
+.category-badge.shopping {
+    background: linear-gradient(135deg, #2980b9, #1f618d);
+    color: white;
+}
+
+.favorite-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.favorite-btn svg {
+    color: var(--traditional-maroon);
+    transition: all 0.3s ease;
+}
+
+.favorite-btn:hover {
+    background: var(--traditional-maroon);
+    transform: scale(1.15) rotate(10deg);
+    border-color: var(--traditional-gold);
+}
+
+.favorite-btn:hover svg {
+    color: white;
+    fill: white;
+}
+
+.favorite-btn.active {
+    background: var(--traditional-maroon);
+}
+
+.favorite-btn.active svg {
+    fill: white;
+    color: white;
+}
+
+/* Card Content - Slides in from right side on hover */
+.card-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.98) 0%, 
+        rgba(245, 230, 211, 0.95) 100%);
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.2s ease-out;
+    z-index: 5;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Traditional decorative line on content - vertical on left */
+.card-content::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) scaleY(0);
+    width: 3px;
+    height: 60px;
+    background: linear-gradient(180deg, 
+        var(--traditional-gold) 0%,
+        var(--traditional-maroon) 50%,
+        var(--traditional-gold) 100%);
+    transition: transform 0.15s ease 0.1s;
+    transform-origin: center;
+}
+
+.attraction-card:hover .card-content {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.attraction-card:hover .card-content::before {
+    transform: translateY(-50%) scaleY(1);
+}
+
+.card-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--traditional-dark-maroon);
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+    transform: translateX(15px);
+    opacity: 0;
+    transition: all 0.15s ease-out 0.05s;
+}
+
+.attraction-card:hover .card-title {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.card-title-tamil {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 0.8rem;
+    color: var(--traditional-maroon);
+    margin-bottom: 8px;
+    opacity: 0;
+    transform: translateX(15px);
+    transition: all 0.15s ease-out 0.08s;
+}
+
+.attraction-card:hover .card-title-tamil {
+    transform: translateX(0);
+    opacity: 0.8;
+}
+
+.card-description {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+    color: var(--traditional-brown);
+    line-height: 1.5;
+    margin-bottom: 5px;
+    transform: translateX(15px);
+    opacity: 0;
+    transition: all 0.15s ease-out 0.1s;
+}
+
+.attraction-card:hover .card-description {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.card-description-tamil {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 0.7rem;
+    color: var(--traditional-maroon);
+    line-height: 1.5;
+    margin-bottom: 8px;
+    transform: translateX(15px);
+    opacity: 0;
+    transition: all 0.15s ease-out 0.12s;
+    font-style: italic;
+}
+
+.attraction-card:hover .card-description-tamil {
+    transform: translateX(0);
+    opacity: 0.85;
+}
+
+.card-meta {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    transform: translateX(15px);
+    opacity: 0;
+    transition: all 0.15s ease-out 0.12s;
+}
+
+.attraction-card:hover .card-meta {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.card-meta > div {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.75rem;
+    color: var(--traditional-brown);
+}
+
+.card-meta svg {
+    width: 12px;
+    height: 12px;
+}
+
+.card-meta svg {
+    color: var(--traditional-gold-dark);
+}
+
+.rating svg {
+    color: #f1c40f !important;
+}
+
+.card-tags {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    transform: translateX(15px);
+    opacity: 0;
+    transition: all 0.15s ease-out 0.14s;
+}
+
+.attraction-card:hover .card-tags {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.tag {
+    padding: 4px 10px;
+    background: rgba(74, 21, 22, 0.08);
+    border-radius: 12px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.7rem;
+    color: var(--traditional-maroon);
+    border: 1px solid rgba(74, 21, 22, 0.15);
+    transition: all 0.1s ease;
+}
+
+.tag:hover {
+    background: rgba(74, 21, 22, 0.15);
+    transform: scale(1.05);
+}
+
+.explore-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 15px;
+    background: linear-gradient(135deg, var(--traditional-maroon), var(--traditional-dark-maroon));
+    color: var(--traditional-cream);
+    text-decoration: none;
+    border-radius: 8px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.15s ease-out;
+    box-shadow: 0 4px 15px rgba(74, 21, 22, 0.25);
+    transform: translateX(15px);
+    opacity: 0;
+    margin-top: auto;
+}
+
+.attraction-card:hover .explore-btn {
+    transform: translateX(0);
+    opacity: 1;
+    transition: all 0.15s ease-out 0.16s;
+}
+
+.explore-btn:hover {
+    background: linear-gradient(135deg, var(--traditional-gold), var(--traditional-gold-dark));
+    color: var(--traditional-dark-maroon);
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(201, 151, 61, 0.4);
+}
+
+.explore-btn svg {
+    transition: transform 0.2s ease;
+}
+
+.explore-btn:hover svg {
+    transform: translateX(5px);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.nearby-footer {
+    background: linear-gradient(180deg, 
+        var(--traditional-dark-maroon) 0%, 
+        #1a0a0a 100%);
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    z-index: 200;
+}
+
+.nearby-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        transparent 0%,
+        var(--traditional-gold) 50%,
+        transparent 100%);
+}
+
+.footer-content p {
+    font-family: 'Lato', sans-serif;
+    color: var(--traditional-cream);
+    opacity: 0.8;
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   WHATSAPP BUTTON OVERRIDE
+   ============================================ */
+body.nearby-page .whatsapp-float {
+    z-index: 1000;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+/* Initial states for animations */
+.nearby-header {
+    opacity: 0;
+    transform: translateY(-30px);
+}
+
+.featured-card {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+}
+
+.filter-btn {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.section-title,
+.section-title-tamil {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.attraction-card {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+}
+
+/* Animated states */
+.nearby-header.animated {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.featured-card.animated {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-btn.animated {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-title.animated,
+.section-title-tamil.animated {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.attraction-card.animated {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Decorative Elements */
+.traditional-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.traditional-divider::before,
+.traditional-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%,
+        var(--traditional-gold) 50%,
+        transparent 100%);
+    max-width: 200px;
+}
+
+.traditional-divider .divider-icon {
+    width: 40px;
+    height: 40px;
+    background: url('img/mandala.png') center/contain no-repeat;
+    opacity: 0.5;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 1024px) {
+    .nearby-main {
+        padding: 30px 40px;
+    }
+
+    .featured-card {
+        flex-direction: column;
+    }
+
+    .featured-image {
+        flex: none;
+        min-height: 300px;
+    }
+
+    .featured-content {
+        padding: 35px;
+    }
+
+    .featured-title {
+        font-size: 2rem;
+    }
+
+    .attractions-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nearby-header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .back-btn {
+        position: static;
+    }
+
+    .page-title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .section-title-tamil {
+        text-align: center;
+        flex: none;
+    }
+
+    .section-header .category-filters {
+        justify-content: center;
+    }
+
+    .nearby-main {
+        padding: 20px;
+    }
+
+    .featured-content {
+        padding: 25px;
+    }
+
+    .featured-title {
+        font-size: 1.6rem;
+    }
+
+    .featured-info {
+        gap: 15px;
+    }
+
+    .category-filters {
+        padding: 15px;
+        gap: 8px;
+    }
+
+    .filter-btn {
+        padding: 10px 16px;
+        font-size: 0.8rem;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+    }
+
+    .attractions-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .attraction-card {
+        height: 260px;
+        flex-direction: column;
+    }
+
+    .card-image {
+        height: 100% !important;
+        width: 100% !important;
+    }
+
+    .attraction-card:hover .card-image {
+        height: 45% !important;
+        width: 100% !important;
+    }
+
+    .card-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: auto;
+        width: 100%;
+        height: 55%;
+        transform: translateY(100%);
+        padding: 15px;
+    }
+
+    .attraction-card:hover .card-content {
+        transform: translateY(0);
+    }
+
+    .card-content::before {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%) scaleX(0);
+        width: 60px;
+        height: 3px;
+    }
+
+    .attraction-card:hover .card-content::before {
+        transform: translateX(-50%) scaleX(1);
+    }
+
+    .mandala-1 {
+        width: 400px;
+        height: 400px;
+    }
+
+    .mandala-2 {
+        width: 300px;
+        height: 300px;
+    }
+
+    .mandala-3,
+    .mandala-4 {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 1.2rem;
+        letter-spacing: 1.5px;
+    }
+
+    .featured-badge {
+        font-size: 0.65rem;
+        padding: 6px 14px;
+    }
+
+    .featured-title {
+        font-size: 1.4rem;
+    }
+
+    .filter-btn span {
+        display: none;
+    }
+
+    .filter-btn {
+        padding: 10px;
+    }
+
+    .filter-btn.active span {
+        display: inline;
+    }
+
+    .card-title {
+        font-size: 1.15rem;
+    }
+
+    .card-content {
+        padding: 20px;
+    }
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+body.nearby-page::-webkit-scrollbar {
+    width: 10px;
+}
+
+body.nearby-page::-webkit-scrollbar-track {
+    background: var(--traditional-cream);
+}
+
+body.nearby-page::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, 
+        var(--traditional-maroon), 
+        var(--traditional-dark-maroon));
+    border-radius: 5px;
+}
+
+body.nearby-page::-webkit-scrollbar-thumb:hover {
+    background: var(--traditional-dark-maroon);
+}
+
+/* ============================================
+   TRADITIONAL DECORATIVE ELEMENTS
+   ============================================ */
+
+/* Corner ornaments */
+.nearby-main::before,
+.nearby-main::after {
+    content: '';
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    background: url('img/mandala.png') center/contain no-repeat;
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.nearby-main::before {
+    top: 100px;
+    left: 20px;
+    animation: floatMandala 20s ease-in-out infinite;
+}
+
+.nearby-main::after {
+    bottom: 100px;
+    right: 20px;
+    animation: floatMandala 25s ease-in-out infinite reverse;
+}
+
+@keyframes floatMandala {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.06;
+    }
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+        opacity: 0.08;
+    }
+}
+
+/* Traditional border top */
+.nearby-header::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: 
+        repeating-linear-gradient(
+            90deg,
+            var(--traditional-gold) 0px,
+            var(--traditional-gold) 5px,
+            transparent 5px,
+            transparent 15px,
+            var(--traditional-maroon) 15px,
+            var(--traditional-maroon) 20px,
+            transparent 20px,
+            transparent 30px
+        );
+    opacity: 0.7;
+}
+
+/* Decorative section dividers */
+/* .attractions-section::before {
+    content: '';
+    display: block;
+    width: 200px;
+    height: 3px;
+    margin: 0 auto 30px;
+    background: linear-gradient(90deg, 
+        transparent 0%,
+        var(--traditional-gold) 20%,
+        var(--traditional-maroon) 50%,
+        var(--traditional-gold) 80%,
+        transparent 100%);
+    border-radius: 2px;
+} */
+
+/* Traditional pattern on cards */
+.attraction-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        var(--traditional-maroon) 0%,
+        var(--traditional-gold) 25%,
+        var(--traditional-maroon) 50%,
+        var(--traditional-gold) 75%,
+        var(--traditional-maroon) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.attraction-card:hover::after {
+    opacity: 1;
+}
+
+/* Featured card traditional border */
+.featured-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: 
+        repeating-linear-gradient(
+            90deg,
+            var(--traditional-maroon) 0px,
+            var(--traditional-maroon) 10px,
+            var(--traditional-gold) 10px,
+            var(--traditional-gold) 20px
+        );
+}
+
+/* ============================================
+   LOADING SHIMMER EFFECT
+   ============================================ */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.loading-shimmer {
+    background: linear-gradient(90deg, 
+        var(--traditional-cream) 0%, 
+        var(--traditional-beige) 50%, 
+        var(--traditional-cream) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+}
+

@@ -1,109 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - AVANTI</title>
+    <title>Contact Us - AVANTI Mahal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Comic+Relief:wght@400;700&family=Cinzel:wght@400;500;600;700&family=Noto+Serif+Tamil:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contact.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
-<body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <img src="img/1.png" alt="AVANTI Logo">
+
+<body class="contact-page">
+    <!-- Navigation Header -->
+    <header class="contact-header">
+        <nav class="contact-nav">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="AVANTI Mahal">
+                </a>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html" class="active">Contact Us</a></li>
+                <li><a href="index.html">Avanti's <br><span>Home</span></a></li>
+                <li><a href="amenities.html">Avanti's <br><span>Amenities</span></a></li>
+                <li><a href="gallery.html">Avanti's <br><span>Gallery</span></a></li>
+                <li><a href="events.html">Avanti's <br><span>Events</span></a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="dropdown-toggle">Avanti's <br><span>World</span>
+                        <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="nearby-attractions.html">Attractions</a></li>
+                        <li><a href="collaborators.html">Collaborators</a></li>
+                        <li><a href="contact.html" class="active">Contact Us</a></li>
+                    </ul>
+                </li>
             </ul>
-        </div>
-    </nav>
+            <!-- Mobile Menu Toggle -->
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
 
-    <main>
-        <section class="page-header">
-            <div class="container">
-                <h1>Contact Us</h1>
-                <p>Get in touch with us today</p>
+    <!-- Main Content -->
+    <main class="contact-main">
+        <!-- Hero Section -->
+        <section class="contact-hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Get In Touch</h1>
+                <p class="hero-title-tamil">எங்களை தொடர்பு கொள்ளுங்கள்</p>
+                <div class="mandala-divider">
+                    <span class="divider-line"></span>
+                    <div class="divider-mandala"></div>
+                    <span class="divider-line"></span>
+                </div>
             </div>
         </section>
 
-        <section class="content-section">
-            <div class="container">
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <h2>Get in Touch</h2>
-                        <div class="info-item">
-                            <h3>Address</h3>
-                            <p>123 Business Street<br>City, State 12345<br>Country</p>
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="contact-container">
+                <!-- Contact Info Cards -->
+                <div class="contact-info-grid">
+                    <!-- Phone -->
+                    <div class="info-card" data-aos="pop">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
                         </div>
-                        <div class="info-item">
-                            <h3>Phone</h3>
-                            <p>+1 (555) 123-4567</p>
-                        </div>
-                        <div class="info-item">
-                            <h3>Email</h3>
-                            <p>info@avanti.com</p>
-                        </div>
-                        <div class="info-item">
-                            <h3>Business Hours</h3>
-                            <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: Closed</p>
-                        </div>
+                        <h3 class="info-title">Phone</h3>
+                        <p class="info-title-tamil">தொலைபேசி</p>
+                        <p class="info-text">+91 98765 43210</p>
+                        <p class="info-text">+91 98765 43211</p>
                     </div>
-                    <div class="contact-form">
-                        <h2>Send us a Message</h2>
-                        <form>
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" required>
+
+                    <!-- Email -->
+                    <div class="info-card" data-aos="pop">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <h3 class="info-title">Email</h3>
+                        <p class="info-title-tamil">மின்னஞ்சல்</p>
+                        <p class="info-text">info@avantimahal.com</p>
+                        <p class="info-text">bookings@avantimahal.com</p>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="info-card" data-aos="pop">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                        <h3 class="info-title">Address</h3>
+                        <p class="info-title-tamil">முகவரி</p>
+                        <p class="info-text">AVANTI Mahal</p>
+                        <p class="info-text">Theni, Tamil Nadu - 625531</p>
+                    </div>
+
+                    <!-- Hours -->
+                    <div class="info-card" data-aos="pop">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                        </div>
+                        <h3 class="info-title">Working Hours</h3>
+                        <p class="info-title-tamil">வேலை நேரம்</p>
+                        <p class="info-text">Mon - Sun: 9:00 AM - 9:00 PM</p>
+                        <p class="info-text">24/7 for Events</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form & Map -->
+                <div class="contact-content-grid">
+                    <!-- Contact Form -->
+                    <div class="contact-form-wrapper">
+                        <h2 class="form-title">Send Us a Message</h2>
+                        <p class="form-title-tamil">எங்களுக்கு செய்தி அனுப்புங்கள்</p>
+                        
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Your Name</label>
+                                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required>
+                                </div>
                             </div>
+                            
                             <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required>
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email" required>
                             </div>
+                            
                             <div class="form-group">
-                                <label for="phone">Phone</label>
-                                <input type="tel" id="phone" name="phone">
+                                <label for="event">Event Type</label>
+                                <select id="event" name="event" required>
+                                    <option value="">Select Event Type</option>
+                                    <option value="wedding">Wedding / திருமணம்</option>
+                                    <option value="reception">Reception / வரவேற்பு</option>
+                                    <option value="engagement">Engagement / நிச்சயதார்த்தம்</option>
+                                    <option value="birthday">Birthday / பிறந்தநாள்</option>
+                                    <option value="corporate">Corporate Event</option>
+                                    <option value="other">Other / மற்றவை</option>
+                                </select>
                             </div>
+                            
                             <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <input type="text" id="subject" name="subject" required>
+                                <label for="date">Preferred Date</label>
+                                <input type="date" id="date" name="date" required>
                             </div>
+                            
                             <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Tell us about your event requirements..." required></textarea>
                             </div>
-                            <button type="submit" class="btn">Send Message</button>
+                            
+                            <button type="submit" class="submit-btn">
+                                <span>Send Message</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                                </svg>
+                            </button>
                         </form>
+                    </div>
+
+                    <!-- Map -->
+                    <div class="map-wrapper">
+                        <h2 class="map-title">Find Us Here</h2>
+                        <p class="map-title-tamil">எங்களை இங்கே கண்டறியுங்கள்</p>
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.0!2d77.4!3d10.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDAwJzAwLjAiTiA3N8KwMjQnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        
+                        <!-- Quick Contact -->
+                        <div class="quick-contact">
+                            <a href="tel:+919876543210" class="quick-btn phone-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                <span>Call Now</span>
+                            </a>
+                            <a href="https://wa.me/919876543210" class="quick-btn whatsapp-btn" target="_blank">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                                </svg>
+                                <span>WhatsApp</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 AVANTI. All rights reserved.</p>
-            <p>Maintained by Future Technology. Theni</p>
+    <!-- Footer -->
+    <!-- Common Footer -->
+    <footer class="common-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="img/logo.png" alt="AVANTI Mahal" class="footer-logo">
+                    <p class="footer-tagline">Creating memories that last a lifetime</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><span>📍</span> Theni, Tamil Nadu</p>
+                    <p><span>📞</span> +91 98765 43210</p>
+                    <p><span>✉️</span> info@avantimahal.com</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/919876543210" aria-label="WhatsApp">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+            <p>&copy; 2024 AVANTI Mahal. All rights reserved.</p>
+                <p>Maintained by <a href="#">Future Technology</a>, Theni</p>
+            </div>
         </div>
     </footer>
-    
+
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
             <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 339.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56 81.2 56 130.5 0 101.8-84.1 184.6-186.1 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
         </svg>
     </a>
-    
-    <script src="animations.js"></script>
-    <script src="script.js"></script>
-</body>
-</html>
 
+    <script src="contact.js"></script>
+</body>
+
+</html>

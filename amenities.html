@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amenities - AVANTI Mahal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Comic+Relief:wght@400;700&family=Cinzel:wght@400;500;600;700&family=Noto+Serif+Tamil:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="amenities.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body class="amenities-page">
+    <!-- Multiple Rotating Mandalas -->
+    <div class="mandala-rotate-1"></div>
+    <div class="mandala-rotate-2"></div>
+    <div class="mandala-rotate-3"></div>
+
+    <!-- Navigation Header -->
+    <header class="amenities-header">
+        <nav class="amenities-nav">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="AVANTI Mahal">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Avanti's <br><span>Home</span></a></li>
+                <li><a href="amenities.html" class="active">Avanti's <br><span>Amenities</span></a></li>
+                <li><a href="gallery.html">Avanti's <br><span>Gallery</span></a></li>
+                <li><a href="events.html">Avanti's <br><span>Events</span></a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="dropdown-toggle">Avanti's <br><span>World</span>
+                        <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="nearby-attractions.html">Attractions</a></li>
+                        <li><a href="collaborators.html">Collaborators</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Mobile Menu Toggle -->
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    <!-- Main Content -->
+    <main class="amenities-main">
+        <!-- Section Title -->
+        <div class="section-intro">
+                    <div class="header-titles">
+            <h1 class="page-title">Experience Premium Facilities</h1>
+            <p class="page-title-tamil">உயர்தர வசதிகளை அனுபவியுங்கள்</p>
+                <p class="page-subtitle">A brand-new venue with an elegant front elevation, offering modern amenities for comfortable and memorable celebrations.</p>
+            </div>
+        </div>
+
+        <!-- Amenities Grid -->
+        <section class="amenities-grid">    
+            <!-- Parking -->
+            <article class="amenity-card" data-amenity="parking">
+                <div class="card-image">
+                    <img src="img/home4.jpg" alt="Ample Parking Space">
+                    <div class="card-overlay"></div>
+                   
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Ample Parking</h3>
+                    <p class="card-title-tamil">போதுமான பார்க்கிங்</p>
+                    <p class="card-description">Spacious parking area accommodating 100+ cars and 200+ bikes with dedicated security personnel for your vehicles' safety.</p>
+                    <p class="card-description-tamil">உங்கள் வாகனங்களின் பாதுகாப்பிற்கு 100+ கார்கள் மற்றும் 200+ பைக்குகளுக்கு இடமளிக்கும் விசாலமான பார்க்கிங் பகுதி.</p>
+                    <div class="card-features">
+                        <span class="feature-tag">Car Parking</span>
+                        <span class="feature-tag">Bike Parking</span>
+                        <span class="feature-tag">24/7 Security</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Temple -->
+            <article class="amenity-card" data-amenity="temple">
+                <div class="card-image">
+                    <img src="img/home1.jpg" alt="Sri Lakshmi Ganapathy Temple">
+                    <div class="card-overlay"></div>
+                  
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Sri Lakshmi Ganapathy Temple</h3>
+                    <p class="card-title-tamil">ஸ்ரீ லக்ஷ்மி கணபதி கோவில்</p>
+                    <p class="card-description">A sacred space with peaceful ambiance for reflection and prayer. Connect spiritually and receive auspicious blessings of Lord Ganapathi for your new beginning in life.</p>
+                    <p class="card-description-tamil">அமைதியான சூழலில் பிரார்த்தனை செய்ய புனித இடம். உங்கள் வாழ்க்கையின் புதிய தொடக்கத்திற்கு கணபதியின் ஆசீர்வாதம் பெறுங்கள்.</p>
+                    <div class="card-features">
+                        <span class="feature-tag">Peaceful Ambiance</span>
+                        <span class="feature-tag">Spiritual Aura</span>
+                        <span class="feature-tag">Divine Blessings</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Reception -->
+            <article class="amenity-card" data-amenity="reception">
+                <div class="card-image">
+                    <img src="img/home.jpg" alt="Reception Area">
+                    <div class="card-overlay"></div>
+                   
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Reception Area</h3>
+                    <p class="card-title-tamil">வரவேற்பு பகுதி</p>
+                    <p class="card-description">Elegant reception counter with comfortable seating arrangements for guests. Professional staff to welcome and guide your visitors.</p>
+                    <p class="card-description-tamil">விருந்தினர்களுக்கு வசதியான இருக்கை ஏற்பாடுகளுடன் நேர்த்தியான வரவேற்பு மேசை. உங்கள் பார்வையாளர்களை வரவேற்க தொழில்முறை ஊழியர்கள்.</p>
+                    <div class="card-features">
+                        <span class="feature-tag">Comfortable Seating</span>
+                        <span class="feature-tag">Professional Staff</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Lobby -->
+            <article class="amenity-card" data-amenity="lobby">
+                <div class="card-image">
+                    <img src="img/section 2.png" alt="Grand Lobby">
+                    <div class="card-overlay"></div>
+                   
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Grand Lobby</h3>
+                    <p class="card-title-tamil">பிரம்மாண்ட லாபி</p>
+                    <p class="card-description">Magnificent entrance lobby with traditional décor, chandeliers, and photo-worthy backdrops creating lasting first impressions.</p>
+                    <p class="card-description-tamil">பாரம்பரிய அலங்காரம், சரவிளக்குகள் மற்றும் புகைப்படத்திற்கு தகுந்த பின்னணியுடன் கம்பீரமான நுழைவு லாபி.</p>
+                    <div class="card-features">
+                        <span class="feature-tag">Grand Entrance</span>
+                        <span class="feature-tag">Photo Spots</span>
+                        <span class="feature-tag">Traditional Décor</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Main Hall -->
+            <article class="amenity-card featured" data-amenity="hall">
+                <div class="card-image">
+                    <img src="img/section 3.png" alt="Main Marriage Hall">
+                    <div class="card-overlay"></div>
+                    
+                    <span class="featured-badge">★ Main Venue</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Grand Marriage Hall</h3>
+                    <p class="card-title-tamil">பிரம்மாண்ட திருமண மண்டபம்</p>
+                    <p class="card-description">Our magnificent main hall can accommodate 1000+ guests with state-of-the-art sound systems, elegant lighting, and beautiful traditional architecture perfect for grand weddings.</p>
+                    <p class="card-description-tamil">எங்கள் பிரமாண்டமான பிரதான மண்டபத்தில் 1000+ விருந்தினர்கள் தங்க முடியும், நவீன ஒலி அமைப்புகள், நேர்த்தியான ஒளியமைப்பு மற்றும் அழகான பாரம்பரிய கட்டிடக்கலை.</p>
+                    <div class="card-features">
+                        <span class="feature-tag">1000+ Capacity</span>
+                        <span class="feature-tag">Sound System</span>
+                        <span class="feature-tag">Elegant Lighting</span>
+                        <span class="feature-tag">Centralized AC</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Stage -->
+            <article class="amenity-card" data-amenity="stage">
+                <div class="card-image">
+                    <img src="img/home2.jpg" alt="Decorated Stage">
+                    <div class="card-overlay"></div>
+                   
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Decorated Stage</h3>
+                    <p class="card-title-tamil">அலங்கரிக்கப்பட்ட மேடை</p>
+                    <p class="card-description">Beautifully decorated grand stage with customizable themes, flower arrangements, and professional lighting to capture perfect moments.</p>
+                    <p class="card-description-tamil">தனிப்பயனாக்கக்கூடிய தீம்கள், பூ ஏற்பாடுகள் மற்றும் சரியான தருணங்களைப் பிடிக்க தொழில்முறை விளக்குகளுடன் அழகாக அலங்கரிக்கப்பட்ட மேடை.</p>
+                    <div class="card-features">
+                        <span class="feature-tag">Floral Décor</span>
+                        <span class="feature-tag">Stage Lighting</span>
+                        <span class="feature-tag">Custom Themes</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Washrooms -->
+            <article class="amenity-card" data-amenity="washroom">
+                <div class="card-image">
+                    <img src="img/1.jpg" alt="Modern Washrooms">
+                    <div class="card-overlay"></div>
+                   
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Modern Washrooms</h3>
+                    <p class="card-title-tamil">நவீன கழிவறைகள்</p>
+                    <p class="card-description">Clean, hygienic, and well-maintained separate washrooms for men and women with modern fixtures and 24/7 housekeeping service.</p>
+                    <p class="card-description-tamil">ஆண்கள் மற்றும் பெண்களுக்கு தனித்தனி சுத்தமான, சுகாதாரமான, நவீன கழிவறைகள் 24/7 பராமரிப்பு சேவையுடன்.</p>
+                    <div class="card-features">
+                        <span class="feature-tag">Clean & Hygienic</span>
+                        <span class="feature-tag">Accessible</span>
+                        <span class="feature-tag">24/7 Housekeeping</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Dining -->
+            <article class="amenity-card" data-amenity="dining">
+                <div class="card-image">
+                    <img src="img/home4.jpg" alt="Dining Hall">
+                    <div class="card-overlay"></div>
+                   
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Spacious Dining Hall</h3>
+                    <p class="card-title-tamil">விசாலமான உணவு அரங்கம்</p>
+                    <p class="card-description">Large dining area with comfortable seating for 500+ guests at a time. Perfect for serving traditional South Indian meals and buffet arrangements.</p>
+                    <p class="card-description-tamil">500+ விருந்தினர்களுக்கு வசதியான இருக்கை கொண்ட பெரிய உணவு பகுதி. பாரம்பரிய தென்னிந்திய உணவுகளுக்கு ஏற்றது.</p>
+                    <div class="card-features">
+                        <span class="feature-tag">500+ Seating</span>
+                        <span class="feature-tag">Buffet Setup</span>
+                        <span class="feature-tag">Traditional Meals</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- AC Rooms -->
+            <article class="amenity-card" data-amenity="acroom">
+                <div class="card-image">
+                    <img src="img/home.jpg" alt="AC Rooms">
+                    <div class="card-overlay"></div>
+                  
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Centralized AC</h3>
+                    <p class="card-title-tamil">மையப்படுத்தப்பட்ட ஏசி</p>
+                    <p class="card-description">Fully air-conditioned halls and rooms ensuring comfortable temperature throughout the venue regardless of weather conditions.</p>
+                    <p class="card-description-tamil">வானிலை நிலைகளைப் பொருட்படுத்தாமல் முழு இடமும் குளிர்சாதன வசதி கொண்டது, வசதியான வெப்பநிலையை உறுதி செய்கிறது.</p>
+                    <div class="card-features">
+                        <span class="feature-tag">Centralized AC</span>
+                        <span class="feature-tag">Climate Control</span>
+                        <span class="feature-tag">All Areas Covered</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Kitchen -->
+            <article class="amenity-card" data-amenity="kitchen">
+                <div class="card-image">
+                    <img src="img/home1.jpg" alt="Modular Kitchen">
+                    <div class="card-overlay"></div>
+                   
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Neat & Clean Kitchen</h3>
+                    <p class="card-title-tamil">சுத்தமான சமையலறை</p>
+                    <p class="card-description">Neat and clean kitchen and dining area to provide hygienic foods for guests. Separate hygiene tank with 1000 litre water provided for cooking and serving.</p>
+                    <p class="card-description-tamil">விருந்தினர்களுக்கு சுகாதாரமான உணவுகளை வழங்க சுத்தமான சமையலறை. சமையல் மற்றும் பரிமாறுவதற்கு 1000 லிட்டர் தனி சுகாதார தொட்டி.</p>
+                    <div class="card-features">
+                        <span class="feature-tag">Hygienic Kitchen</span>
+                        <span class="feature-tag">1000L Water Tank</span>
+                        <span class="feature-tag">Clean Dining</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Guest Rooms -->
+            <article class="amenity-card" data-amenity="guestrooms">
+                <div class="card-image">
+                    <img src="img/home.jpg" alt="Furnished Guest Rooms">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Furnished Guest Rooms</h3>
+                    <p class="card-title-tamil">தங்கும் அறைகள்</p>
+                    <p class="card-description">06 number of fully furnished guest rooms for the bride's and groom's families. Comfortable beds, attached bathrooms, and all modern amenities for a relaxing stay.</p>
+                    <p class="card-description-tamil">மணமகள் மற்றும் மணமகன் குடும்பத்தினருக்கு 06 முழுமையாக அமைக்கப்பட்ட விருந்தினர் அறைகள். வசதியான படுக்கைகள், இணைக்கப்பட்ட குளியலறைகள்.</p>
+                    <div class="card-features">
+                        <span class="feature-tag">6 Rooms</span>
+                        <span class="feature-tag">Fully Furnished</span>
+                        <span class="feature-tag">Attached Bath</span>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- Additional Features Section -->
+        <section class="additional-features">
+            <div class="mandala-divider">
+                <span class="divider-line"></span>
+                <div class="divider-mandala"></div>
+                <span class="divider-line"></span>
+            </div>
+            <h2 class="section-main-title">Additional Facilities</h2>
+            <p class="section-main-tamil">கூடுதல் வசதிகள்</p>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon"><img src="img/mandala-side-1.png" alt=""></div>
+                    <h4>Granite Flooring</h4>
+                    <p class="tamil-text">கிரானைட் தரை</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><img src="img/mandala-side-1.png" alt=""></div>
+                    <h4>Quality Chairs & Tables</h4>
+                    <p class="tamil-text">தரமான நாற்காலிகள்</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><img src="img/mandala-side-1.png" alt=""></div>
+                    <h4>30+ CCTV Cameras</h4>
+                    <p class="tamil-text">30+ சிசிடிவி கேமராக்கள்</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><img src="img/mandala-side-1.png" alt=""></div>
+                    <h4>Customized Lighting</h4>
+                    <p class="tamil-text">தனிப்பயன் விளக்குகள்</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><img src="img/mandala-side-1.png" alt=""></div>
+                    <h4>Hi-Speed WiFi</h4>
+                    <p class="tamil-text">வேகமான வைஃபை</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><img src="img/mandala-side-1.png" alt=""></div>
+                    <h4>Gensets & UPS Backup</h4>
+                    <p class="tamil-text">ஜெனரேட்டர் & யுபிஎஸ்</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><img src="img/mandala-side-1.png" alt=""></div>
+                    <h4>24x7 Borewell Water</h4>
+                    <p class="tamil-text">24x7 போர்வெல் நீர்</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><img src="img/mandala-side-1.png" alt=""></div>
+                    <h4>1000L Drinking Water</h4>
+                    <p class="tamil-text">1000L குடிநீர்</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><img src="img/mandala-side-1.png" alt=""></div>
+                    <h4>Security & Housekeeping</h4>
+                    <p class="tamil-text">பாதுகாப்பு & சுத்தம்</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><img src="img/mandala-side-1.png" alt=""></div>
+                    <h4>Fire Safety Equipment</h4>
+                    <p class="tamil-text">தீ பாதுகாப்பு உபகரணம்</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><img src="img/mandala-side-1.png" alt=""></div>
+                    <h4>Lift Access</h4>
+                    <p class="tamil-text">லிஃப்ட் வசதி</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><img src="img/mandala-side-1.png" alt=""></div>
+                    <h4>Sound System</h4>
+                    <p class="tamil-text">ஒலி அமைப்பு</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Ready to Book Your Event?</h2>
+                <p class="tamil-text">உங்கள் நிகழ்வை முன்பதிவு செய்ய தயாரா?</p>
+                <p>Contact us today to schedule a venue visit and discuss your requirements.</p>
+                <a href="contact.html" class="cta-btn">
+                    <span>Contact Us Now</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Common Footer -->
+    <footer class="common-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="img/logo.png" alt="AVANTI Mahal" class="footer-logo">
+                    <p class="footer-tagline">Creating memories that last a lifetime</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><span>📍</span> Theni, Tamil Nadu</p>
+                    <p><span>📞</span> +91 98765 43210</p>
+                    <p><span>✉️</span> info@avantimahal.com</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/919876543210" aria-label="WhatsApp">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AVANTI Mahal. All rights reserved.</p>
+                <p>Maintained by <a href="#">Future Technology</a>, Theni</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 339.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56 81.2 56 130.5 0 101.8-84.1 184.6-186.1 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+    </a>
+
+    <script src="amenities.js"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,1468 @@
+/* ============================================
+   HOME PAGE - TRADITIONAL MAROON THEME
+   Matching style with Amenities, Gallery, Contact
+   ============================================ */
+
+/* CSS Variables for Maroon Theme */
+:root {
+    --hm-maroon: #4a1516;
+    --hm-dark-maroon: #2d0c0d;
+    --hm-brown: #3d2422;
+    --hm-deep: #1f0e0e;
+    --hm-cream: #f5e6d3;
+    --hm-gold: #c9973d;
+    --hm-gold-light: #d4a84b;
+    --hm-gold-dark: #a67c2e;
+    --hm-beige: #e8dcc8;
+}
+
+/* ============================================
+   TOP INFO BAR - ABOVE NAVBAR
+   ============================================ */
+.top-info-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    background: linear-gradient(90deg, 
+        #1a0a0a 0%, 
+        #2a1010 50%, 
+        #1a0a0a 100%);
+    border-bottom: 2px solid var(--hm-gold);
+    padding: 8px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.top-bar-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.top-bar-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+    color: var(--hm-cream);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.top-bar-item:hover {
+    color: var(--hm-gold);
+}
+
+.top-bar-item svg {
+    stroke: var(--hm-gold);
+    flex-shrink: 0;
+}
+
+.top-bar-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.top-bar-english-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--hm-cream);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.top-bar-divider {
+    color: rgba(201, 151, 61, 0.5);
+    font-weight: 300;
+}
+
+.top-bar-tamil-name {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--hm-gold);
+    letter-spacing: 1px;
+    text-shadow: 0 0 20px rgba(201, 151, 61, 0.3);
+}
+
+.top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.top-bar-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.top-bar-btn svg {
+    flex-shrink: 0;
+}
+
+.reserve-btn {
+    background: linear-gradient(135deg, var(--hm-gold), var(--hm-gold-dark));
+    color: var(--hm-dark-maroon);
+    border: 1px solid var(--hm-gold);
+}
+
+.reserve-btn:hover {
+    background: transparent;
+    color: var(--hm-gold);
+}
+
+.reserve-btn svg {
+    stroke: var(--hm-dark-maroon);
+    transition: stroke 0.3s ease;
+}
+
+.reserve-btn:hover svg {
+    stroke: var(--hm-gold);
+}
+
+.direction-btn {
+    background: transparent;
+    color: var(--hm-cream);
+    border: 1px solid rgba(245, 230, 211, 0.4);
+}
+
+.direction-btn:hover {
+    border-color: var(--hm-gold);
+    color: var(--hm-gold);
+}
+
+.direction-btn svg {
+    stroke: var(--hm-cream);
+    transition: stroke 0.3s ease;
+}
+
+.direction-btn:hover svg {
+    stroke: var(--hm-gold);
+}
+
+/* Adjust header position for top bar */
+/* ============================================
+   HEADER WITH NAVIGATION - AMENITIES STYLE
+   ============================================ */
+.home-header {
+    position: fixed;
+    top: 40px; /* Account for top info bar */
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    /* Always maroon theme - no transparent */
+    background: linear-gradient(180deg, 
+        rgba(74, 21, 22, 0.98) 0%, 
+        rgba(45, 12, 13, 0.98) 100%);
+    box-shadow: 0 4px 30px rgba(45, 12, 13, 0.4);
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all 0.4s ease;
+}
+
+.home-header.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Scrolled state - same maroon background */
+.home-header.scrolled {
+    background: linear-gradient(180deg, 
+        rgba(74, 21, 22, 0.98) 0%, 
+        rgba(45, 12, 13, 0.98) 100%);
+    box-shadow: 0 4px 30px rgba(45, 12, 13, 0.4);
+}
+
+.home-header::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--hm-gold) 0px,
+        var(--hm-gold) 4px,
+        transparent 4px,
+        transparent 12px,
+        var(--hm-maroon) 12px,
+        var(--hm-maroon) 16px,
+        transparent 16px,
+        transparent 24px
+    );
+    opacity: 0.8;
+    transition: opacity 0.4s ease;
+}
+
+/* Gold border always visible */
+.home-header.scrolled::after {
+    opacity: 0.8;
+}
+
+.home-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 12px 40px;
+}
+
+.nav-logo a {
+    display: block;
+}
+
+.nav-logo img {
+    height: 60px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.nav-logo img:hover {
+    transform: scale(1.05);
+}
+
+.home-header .nav-menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.home-header .nav-menu li a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--hm-cream);
+    text-decoration: none;
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.home-header .nav-menu li a span {
+    font-weight: 600;
+    color: var(--hm-gold);
+}
+
+.home-header .nav-menu li a:hover {
+    color: var(--hm-gold);
+    background: rgba(201, 151, 61, 0.15);
+}
+
+.home-header .nav-menu li a:hover span {
+    color: var(--hm-cream);
+}
+
+.home-header .nav-menu li a.active {
+    color: var(--hm-gold);
+    background: rgba(201, 151, 61, 0.2);
+    border-bottom: 2px solid var(--hm-gold);
+}
+
+/* ============================================
+   DROPDOWN MENU - Avanti's World
+   ============================================ */
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown .dropdown-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.nav-dropdown .dropdown-arrow {
+    margin-top: 4px;
+    transition: transform 0.3s ease;
+}
+
+.nav-dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.nav-dropdown .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    min-width: 180px;
+    background: linear-gradient(180deg, 
+        rgba(45, 12, 13, 0.98) 0%, 
+        rgba(74, 21, 22, 0.98) 100%);
+    border: 1px solid rgba(201, 151, 61, 0.3);
+    border-radius: 12px;
+    padding: 10px 0;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+/* Gold accent line at top of dropdown */
+.nav-dropdown .dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--hm-gold), 
+        transparent);
+    border-radius: 2px;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown .dropdown-menu li {
+    margin: 0;
+}
+
+.nav-dropdown .dropdown-menu li a {
+    display: block;
+    padding: 12px 25px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--hm-cream);
+    text-decoration: none;
+    text-align: left;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-dropdown .dropdown-menu li a::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    background: var(--hm-gold);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.nav-dropdown .dropdown-menu li a:hover {
+    background: rgba(201, 151, 61, 0.15);
+    color: var(--hm-gold);
+    padding-left: 30px;
+}
+
+.nav-dropdown .dropdown-menu li a:hover::before {
+    opacity: 1;
+}
+
+/* Dropdown separator lines */
+.nav-dropdown .dropdown-menu li:not(:last-child)::after {
+    content: '';
+    display: block;
+    margin: 0 15px;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(201, 151, 61, 0.2), 
+        transparent);
+}
+
+/* Mobile Menu Toggle */
+.home-header .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.home-header .menu-toggle span {
+    width: 28px;
+    height: 3px;
+    background: var(--hm-gold);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.home-header .menu-toggle:hover span {
+    background: var(--hm-cream);
+}
+
+/* Hamburger to X animation */
+.home-header .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.home-header .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.home-header .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ============================================
+   HIDE OLD NAVBAR STYLES
+   ============================================ */
+body.home-page .navbar {
+    display: none !important;
+}
+
+/* ============================================
+   HERO SECTION ADJUSTMENTS
+   ============================================ */
+body.home-page .hero {
+    margin-top: 0;
+}
+
+/* Dark maroon overlay for hero */
+body.home-page .hero::before {
+    background: linear-gradient(180deg,
+        rgba(45, 12, 13, 0.4) 0%,
+        rgba(45, 12, 13, 0.5) 50%,
+        rgba(45, 12, 13, 0.6) 100%);
+}
+
+/* Door colors - more maroon */
+body.home-page .door-left,
+body.home-page .door-right {
+    background:
+        linear-gradient(180deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(0, 0, 0, 0.6)),
+        radial-gradient(circle at center,
+            rgba(201, 151, 61, 0.15),
+            transparent 60%),
+        linear-gradient(135deg, var(--hm-dark-maroon), var(--hm-maroon));
+}
+
+/* ============================================
+   CELEBRATING SECTION - MAROON THEME
+   ============================================ */
+body.home-page .celebrating-section {
+    background: linear-gradient(135deg, 
+        var(--hm-dark-maroon) 0%, 
+        var(--hm-maroon) 40%, 
+        #5a1a1b 70%, 
+        var(--hm-dark-maroon) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Left-top decorative pattern */
+body.home-page .celebrating-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 400px;
+    background: url('img/home_content-bg.png') no-repeat;
+    background-size: contain;
+    background-position: top left;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+/* Ensure content stays above decorations */
+body.home-page .celebrating-container {
+    position: relative;
+    z-index: 2;
+}
+
+body.home-page .celebrating-content h2 {
+    color: var(--hm-cream);
+}
+
+body.home-page .celebrating-content h2 .gold-accent {
+    color: var(--hm-gold);
+    text-shadow: 0 0 20px rgba(201, 151, 61, 0.3);
+}
+
+body.home-page .celebrating-content .en-text {
+    color: rgba(245, 230, 211, 0.9);
+}
+
+body.home-page .celebrating-content .tamil-text {
+    color: rgba(245, 230, 211, 0.9);
+    border-left-color: var(--hm-gold);
+}
+
+body.home-page .attractions-btn {
+    background: linear-gradient(135deg, var(--hm-gold), var(--hm-gold-dark));
+    color: var(--hm-dark-maroon);
+    transition: all 0.3s ease;
+    border: 2px solid var(--hm-gold);
+}
+
+body.home-page .attractions-btn:hover {
+    background: transparent;
+    color: #ffffff;
+    font-weight: 800;
+    border: 2px solid var(--hm-gold);
+}
+
+body.home-page .celebrating-image img {
+    border-color: rgba(201, 151, 61, 0.3);
+}
+
+/* ============================================
+   PARALLAX SECTION - MAROON OVERLAY
+   ============================================ */
+body.home-page .parallax-overlay {
+    background: rgba(45, 12, 13, 0.7);
+}
+
+body.home-page .parallax-box {
+    background: rgba(74, 21, 22, 0.6);
+    border-color: rgba(201, 151, 61, 0.3);
+}
+
+body.home-page .parallax-box h3 {
+    color: var(--hm-gold);
+}
+
+body.home-page .parallax-btn {
+    background: linear-gradient(135deg, var(--hm-gold), var(--hm-gold-dark));
+    color: var(--hm-dark-maroon);
+    transition: all 0.3s ease;
+    border: 2px solid var(--hm-gold);
+}
+
+body.home-page .parallax-btn:hover {
+    background: transparent;
+    color: #ffffff;
+    font-weight: 800;
+    border: 2px solid var(--hm-gold);
+}
+
+/* Quote Row with Person Image */
+.parallax-quote-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    margin-bottom: 40px;
+    padding: 25px 40px;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 16px;
+    border-left: 4px solid var(--hm-gold);
+    width: 100%;
+    max-width: 900px;
+}
+
+.quote-person-img {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--hm-gold);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    background: var(--hm-dark-maroon);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quote-person-img img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+.quote-content {
+    flex: 1;
+    text-align: left;
+}
+
+.quote-content .quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--hm-cream);
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.quote-content .quote-tamil {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 0.95rem;
+    color: var(--hm-gold);
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+/* Responsive Quote Row */
+@media (max-width: 768px) {
+    .parallax-quote-row {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    .quote-content {
+        text-align: center;
+    }
+    
+    .quote-content .quote-text {
+        font-size: 1.05rem;
+    }
+    
+    .quote-person-img {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* ============================================
+   TAMIL CALENDAR FLOATING BUTTON & MODAL
+   ============================================ */
+.calendar-float {
+    position: fixed;
+    bottom: 100px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--hm-gold), var(--hm-gold-dark));
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(201, 151, 61, 0.4);
+    z-index: 998;
+    transition: all 0.3s ease;
+}
+
+.calendar-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(201, 151, 61, 0.6);
+}
+
+.calendar-float svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--hm-dark-maroon);
+}
+
+.calendar-label {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 0.5rem;
+    color: var(--hm-dark-maroon);
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+/* Calendar Modal */
+.calendar-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.calendar-modal.active {
+    display: flex;
+}
+
+.calendar-modal-content {
+    background: linear-gradient(135deg, var(--hm-dark-maroon), var(--hm-maroon));
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    border: 2px solid var(--hm-gold);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.calendar-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--hm-gold);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.calendar-close:hover {
+    transform: rotate(90deg);
+}
+
+.calendar-title {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 1.8rem;
+    color: var(--hm-gold);
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.calendar-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    color: var(--hm-cream);
+    text-align: center;
+    margin-bottom: 25px;
+    opacity: 0.8;
+}
+
+.calendar-months {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.calendar-month {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(201, 151, 61, 0.3);
+}
+
+.calendar-month h3 {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 1.1rem;
+    color: var(--hm-gold);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(201, 151, 61, 0.3);
+}
+
+.muhurtham-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.muhurtham-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 0.9rem;
+    color: var(--hm-cream);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.muhurtham-list li:last-child {
+    border-bottom: none;
+}
+
+.muhurtham-list .date {
+    background: var(--hm-gold);
+    color: var(--hm-dark-maroon);
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.muhurtham-list .day {
+    color: rgba(245, 230, 211, 0.7);
+    font-size: 0.8rem;
+    min-width: 60px;
+}
+
+.calendar-note {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 0.85rem;
+    color: rgba(245, 230, 211, 0.7);
+    text-align: center;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+/* Calendar Modal Responsive */
+@media (max-width: 768px) {
+    .calendar-modal-content {
+        padding: 20px;
+        max-height: 90vh;
+    }
+    
+    .calendar-title {
+        font-size: 1.4rem;
+    }
+    
+    .calendar-months {
+        grid-template-columns: 1fr;
+    }
+    
+    .calendar-float {
+        bottom: 90px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .calendar-float svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .calendar-label {
+        display: none;
+    }
+}
+
+/* ============================================
+   TRIP CTA SECTION - NEARBY ATTRACTIONS
+   ============================================ */
+body.home-page .trip-cta-section {
+    background: linear-gradient(135deg, 
+        #faf6f0 0%, 
+        var(--hm-cream) 50%, 
+        #faf6f0 100%);
+    padding: 50px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated gradient border top */
+body.home-page .trip-cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, 
+        var(--hm-gold),
+        var(--hm-maroon),
+        var(--hm-gold),
+        var(--hm-maroon),
+        var(--hm-gold));
+    background-size: 200% 100%;
+    animation: shimmerBorderTrip 3s linear infinite;
+}
+
+/* Animated gradient border bottom */
+body.home-page .trip-cta-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, 
+        var(--hm-gold),
+        var(--hm-maroon),
+        var(--hm-gold),
+        var(--hm-maroon),
+        var(--hm-gold));
+    background-size: 200% 100%;
+    animation: shimmerBorderTrip 3s linear infinite reverse;
+}
+
+@keyframes shimmerBorderTrip {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 200% 0%; }
+}
+
+body.home-page .trip-cta-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Floating icon with glow */
+body.home-page .trip-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    animation: floatIcon 3s ease-in-out infinite;
+    display: inline-block;
+    filter: drop-shadow(0 8px 15px rgba(74, 21, 22, 0.2));
+}
+
+@keyframes floatIcon {
+    0%, 100% { 
+        transform: translateY(0) scale(1); 
+    }
+    50% { 
+        transform: translateY(-15px) scale(1.1); 
+    }
+}
+
+/* Animated heading */
+body.home-page .trip-heading {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--hm-dark-maroon);
+    margin-bottom: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+}
+
+body.home-page .trip-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--hm-gold), transparent);
+    animation: expandLine 2s ease-in-out infinite;
+}
+
+@keyframes expandLine {
+    0%, 100% { width: 100px; opacity: 0.5; }
+    50% { width: 200px; opacity: 1; }
+}
+
+body.home-page .trip-heading .gold-text {
+    color: var(--hm-gold);
+    text-shadow: 0 0 30px rgba(201, 151, 61, 0.4);
+    animation: glowText 2s ease-in-out infinite;
+}
+
+@keyframes glowText {
+    0%, 100% { text-shadow: 0 0 20px rgba(201, 151, 61, 0.3); }
+    50% { text-shadow: 0 0 40px rgba(201, 151, 61, 0.6), 0 0 60px rgba(201, 151, 61, 0.3); }
+}
+
+body.home-page .trip-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    color: var(--hm-brown);
+    margin-bottom: 8px;
+    line-height: 1.6;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body.home-page .trip-text-tamil {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 0.9rem;
+    color: var(--hm-maroon);
+    margin-bottom: 25px;
+    font-style: italic;
+    opacity: 0.9;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Animated highlight tags */
+body.home-page .trip-highlights {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+body.home-page .highlight-tag {
+    background: linear-gradient(135deg, 
+        rgba(74, 21, 22, 0.08) 0%, 
+        rgba(74, 21, 22, 0.03) 100%);
+    border: 1px solid rgba(201, 151, 61, 0.4);
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--hm-dark-maroon);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+body.home-page .highlight-tag::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(201, 151, 61, 0.3), 
+        transparent);
+    transition: left 0.5s ease;
+}
+
+body.home-page .highlight-tag:hover::before {
+    left: 100%;
+}
+
+body.home-page .highlight-tag:hover {
+    background: linear-gradient(135deg, var(--hm-maroon), var(--hm-dark-maroon));
+    color: var(--hm-cream);
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(74, 21, 22, 0.3);
+    border-color: var(--hm-gold);
+}
+
+/* Staggered animation for tags */
+body.home-page .highlight-tag:nth-child(1) { animation: slideInTag 0.6s ease-out 0.1s both; }
+body.home-page .highlight-tag:nth-child(2) { animation: slideInTag 0.6s ease-out 0.2s both; }
+body.home-page .highlight-tag:nth-child(3) { animation: slideInTag 0.6s ease-out 0.3s both; }
+
+@keyframes slideInTag {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animated CTA button */
+body.home-page .trip-btn {
+    background: linear-gradient(135deg, var(--hm-gold), var(--hm-gold-dark));
+    color: var(--hm-dark-maroon);
+    transition: all 0.4s ease;
+    border: 2px solid var(--hm-gold);
+    padding: 12px 28px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(201, 151, 61, 0.4);
+}
+
+body.home-page .trip-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.4), 
+        transparent);
+    transition: left 0.6s ease;
+}
+
+body.home-page .trip-btn:hover::before {
+    left: 100%;
+}
+
+body.home-page .trip-btn:hover {
+    background: transparent;
+    color: var(--hm-dark-maroon);
+    font-weight: 800;
+    border: 2px solid var(--hm-gold);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(201, 151, 61, 0.4);
+}
+
+/* Pulse animation for button */
+body.home-page .trip-btn {
+    animation: pulseBtn 2s ease-in-out infinite;
+}
+
+@keyframes pulseBtn {
+    0%, 100% { box-shadow: 0 8px 25px rgba(201, 151, 61, 0.4); }
+    50% { box-shadow: 0 8px 35px rgba(201, 151, 61, 0.6), 0 0 0 8px rgba(201, 151, 61, 0.1); }
+}
+
+/* Corner Mandalas */
+body.home-page .trip-mandala {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    opacity: 0.85;
+    pointer-events: none;
+    z-index: 1;
+    animation: rotateMandala 30s linear infinite;
+}
+
+body.home-page .trip-mandala-left {
+    bottom: 15px;
+    left: 15px;
+}
+
+body.home-page .trip-mandala-right {
+    bottom: 15px;
+    right: 15px;
+    animation-direction: reverse;
+}
+
+@keyframes rotateMandala {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ============================================
+   ALL BUTTONS HOVER - WHITE BOLD TEXT, TRANSPARENT BG
+   ============================================ */
+body.home-page .btn,
+body.home-page .contact-btn {
+    background: linear-gradient(135deg, var(--hm-gold), var(--hm-gold-dark)) !important;
+    color: var(--hm-dark-maroon) !important;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    border: 2px solid var(--hm-gold) !important;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(201, 151, 61, 0.4);
+}
+
+body.home-page .contact-btn::before,
+body.home-page .contact-btn::after {
+    display: none !important;
+}
+
+body.home-page .btn:hover,
+body.home-page .contact-btn:hover {
+    background: transparent !important;
+    color: var(--hm-gold) !important;
+    font-weight: 700;
+    border: 2px solid var(--hm-gold) !important;
+    box-shadow: 0 10px 30px rgba(201, 151, 61, 0.5);
+}
+
+/* ============================================
+   KEY FEATURES SECTION
+   ============================================ */
+body.home-page .key-features-overlay {
+    background: rgba(45, 12, 13, 0.85);
+}
+
+body.home-page .key-features-heading {
+    color: var(--hm-gold);
+}
+
+body.home-page .feature-item {
+    background: rgba(74, 21, 22, 0.5);
+    border-color: rgba(201, 151, 61, 0.3);
+}
+
+body.home-page .feature-item:hover {
+    border-color: var(--hm-gold);
+    background: rgba(74, 21, 22, 0.7);
+}
+
+/* ============================================
+   FOOTER - MAROON THEME
+   ============================================ */
+body.home-page footer {
+    background: linear-gradient(180deg, 
+        var(--hm-dark-maroon) 0%, 
+        #1a0a0a 100%);
+}
+
+body.home-page footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        transparent 0%,
+        var(--hm-gold) 50%,
+        transparent 100%);
+}
+
+body.home-page footer p {
+    color: var(--hm-cream);
+    opacity: 0.8;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 1024px) {
+    .home-nav {
+        padding: 10px 30px;
+    }
+
+    .home-header .nav-menu {
+        gap: 15px;
+    }
+
+    .home-header .nav-menu li a {
+        font-size: 0.75rem;
+        padding: 8px 12px;
+    }
+
+    /* Top bar responsive */
+    .top-bar-container {
+        padding: 0 20px;
+    }
+
+    .top-bar-left {
+        gap: 12px;
+    }
+
+    .top-bar-address {
+        display: none;
+    }
+
+    .top-bar-item {
+        font-size: 0.75rem;
+    }
+
+    .top-bar-english-name {
+        font-size: 0.95rem;
+    }
+
+    .top-bar-tamil-name {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Top bar mobile */
+    .top-info-bar {
+        padding: 6px 0;
+    }
+
+    .top-bar-left {
+        display: none;
+    }
+
+    .top-bar-center {
+        position: static;
+        transform: none;
+        gap: 6px;
+    }
+
+    .top-bar-english-name {
+        font-size: 0.85rem;
+        letter-spacing: 1.5px;
+    }
+
+    .top-bar-tamil-name {
+        font-size: 0.8rem;
+    }
+
+    .top-bar-divider {
+        display: none;
+    }
+
+    .top-bar-btn {
+        padding: 5px 10px;
+        font-size: 0.7rem;
+    }
+
+    .top-bar-btn span {
+        display: none;
+    }
+
+    .top-bar-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .home-header {
+        top: 35px;
+    }
+
+    .home-header .menu-toggle {
+        display: flex;
+    }
+
+    .home-header .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: linear-gradient(180deg, 
+            var(--hm-dark-maroon) 0%, 
+            var(--hm-maroon) 100%);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        transition: right 0.4s ease;
+        z-index: 1000;
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .home-header .nav-menu.active {
+        right: 0;
+    }
+
+    .home-header .nav-menu li a {
+        font-size: 1rem;
+        padding: 15px 25px;
+    }
+
+    .nav-logo img {
+        height: 50px;
+    }
+
+    .home-nav {
+        padding: 10px 20px;
+    }
+
+    /* Mobile Dropdown Styles */
+    .nav-dropdown .dropdown-toggle {
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .nav-dropdown .dropdown-arrow {
+        margin-top: 0;
+    }
+
+    .nav-dropdown .dropdown-menu {
+        position: static;
+        transform: none;
+        min-width: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        border: none;
+        border-radius: 8px;
+        margin-top: 10px;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 1;
+        visibility: visible;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .nav-dropdown.active .dropdown-menu {
+        max-height: 300px;
+        padding: 10px 0;
+    }
+
+    .nav-dropdown .dropdown-menu::before {
+        display: none;
+    }
+
+    .nav-dropdown .dropdown-menu li a {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .nav-dropdown .dropdown-menu li a:hover {
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-logo img {
+        height: 45px;
+    }
+
+    .home-header .nav-menu li a {
+        font-size: 0.9rem;
+        padding: 12px 20px;
+    }
+
+    .top-bar-right {
+        gap: 8px;
+    }
+
+    .top-bar-english-name {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .top-bar-tamil-name {
+        display: none;
+    }
+
+    .home-header {
+        top: 32px;
+    }
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+body.home-page::-webkit-scrollbar {
+    width: 10px;
+}
+
+body.home-page::-webkit-scrollbar-track {
+    background: var(--hm-cream);
+}
+
+body.home-page::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, 
+        var(--hm-maroon), 
+        var(--hm-dark-maroon));
+    border-radius: 5px;
+}
+
+body.home-page::-webkit-scrollbar-thumb:hover {
+    background: var(--hm-dark-maroon);
+}
+

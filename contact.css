@@ -1,0 +1,884 @@
+/* ============================================
+   CONTACT PAGE - TRADITIONAL MAROON THEME
+   ============================================ */
+
+/* CSS Variables */
+:root {
+    --ct-maroon: #4a1516;
+    --ct-dark-maroon: #2d0c0d;
+    --ct-brown: #3d2422;
+    --ct-deep: #1f0e0e;
+    --ct-cream: #f5e6d3;
+    --ct-gold: #c9973d;
+    --ct-gold-light: #d4a84b;
+    --ct-gold-dark: #a67c2e;
+    --ct-beige: #e8dcc8;
+}
+
+/* Body styling - Clean Maroon Background */
+body.contact-page {
+    background: linear-gradient(180deg, 
+        #5a1a1b 0%, 
+        #4a1516 30%,
+        #3d1213 70%,
+        #2d0c0d 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* ============================================
+   HEADER WITH NAVIGATION
+   ============================================ */
+.contact-header {
+    position: relative;
+    z-index: 200;
+    background: linear-gradient(180deg, 
+        rgba(74, 21, 22, 0.98) 0%, 
+        rgba(45, 12, 13, 0.98) 100%);
+    box-shadow: 0 4px 30px rgba(45, 12, 13, 0.4);
+}
+
+.contact-header::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--ct-gold) 0px,
+        var(--ct-gold) 5px,
+        transparent 5px,
+        transparent 15px,
+        var(--ct-maroon) 15px,
+        var(--ct-maroon) 20px,
+        transparent 20px,
+        transparent 30px
+    );
+    opacity: 0.7;
+}
+
+.contact-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 12px 40px;
+}
+
+.nav-logo a {
+    display: block;
+}
+
+.nav-logo img {
+    height: 65px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.nav-logo img:hover {
+    transform: scale(1.05);
+}
+
+.contact-header .nav-menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-header .nav-menu li a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--ct-cream);
+    text-decoration: none;
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.contact-header .nav-menu li a span {
+    font-weight: 600;
+    color: var(--ct-gold);
+}
+
+.contact-header .nav-menu li a:hover {
+    color: var(--ct-gold);
+    background: rgba(201, 151, 61, 0.15);
+}
+
+.contact-header .nav-menu li a.active {
+    color: var(--ct-gold);
+    background: rgba(201, 151, 61, 0.2);
+    border-bottom: 2px solid var(--ct-gold);
+}
+
+/* ============================================
+   DROPDOWN MENU - Avanti's World
+   ============================================ */
+.contact-header .nav-dropdown {
+    position: relative;
+}
+
+.contact-header .nav-dropdown .dropdown-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.contact-header .nav-dropdown .dropdown-arrow {
+    margin-top: 4px;
+    transition: transform 0.3s ease;
+}
+
+.contact-header .nav-dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.contact-header .nav-dropdown .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    min-width: 180px;
+    background: linear-gradient(180deg, 
+        rgba(45, 12, 13, 0.98) 0%, 
+        rgba(74, 21, 22, 0.98) 100%);
+    border: 1px solid rgba(201, 151, 61, 0.3);
+    border-radius: 12px;
+    padding: 10px 0;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+.contact-header .nav-dropdown .dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--ct-gold), 
+        transparent);
+    border-radius: 2px;
+}
+
+.contact-header .nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.contact-header .nav-dropdown .dropdown-menu li {
+    margin: 0;
+}
+
+.contact-header .nav-dropdown .dropdown-menu li a {
+    display: block;
+    padding: 12px 25px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ct-cream);
+    text-decoration: none;
+    text-align: left;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.contact-header .nav-dropdown .dropdown-menu li a::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    background: var(--ct-gold);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.contact-header .nav-dropdown .dropdown-menu li a:hover {
+    background: rgba(201, 151, 61, 0.15);
+    color: var(--ct-gold);
+    padding-left: 30px;
+}
+
+.contact-header .nav-dropdown .dropdown-menu li a:hover::before {
+    opacity: 1;
+}
+
+.contact-header .nav-dropdown .dropdown-menu li:not(:last-child)::after {
+    content: '';
+    display: block;
+    margin: 0 15px;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(201, 151, 61, 0.2), 
+        transparent);
+}
+
+/* Mobile Menu Toggle */
+.contact-header .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.contact-header .menu-toggle span {
+    width: 28px;
+    height: 3px;
+    background: var(--ct-gold);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.contact-header .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.contact-header .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.contact-header .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.contact-hero {
+    padding: 10px 40px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--ct-gold);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 100%;
+}
+
+.hero-title-tamil {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 1.2rem;
+    color: var(--ct-cream);
+    margin-bottom: 25px;
+    font-weight: 700;
+    opacity: 0.9;
+    text-align: center;
+    width: 100%;
+}
+
+.mandala-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.divider-line {
+    width: 150px;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--ct-gold) 50%, 
+        transparent 100%);
+}
+
+.divider-mandala {
+    width: 50px;
+    height: 50px;
+    background: url('img/m-bg-1.png') center/contain no-repeat;
+    opacity: 0.8;
+    animation: rotateMandala 20s linear infinite;
+    filter: brightness(1.5);
+}
+
+@keyframes rotateMandala {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ============================================
+   CONTACT SECTION
+   ============================================ */
+.contact-section {
+    padding: 60px 40px;
+    position: relative;
+    z-index: 10;
+}
+
+.contact-container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Info Cards Grid */
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-bottom: 60px;
+}
+
+.info-card {
+    background: linear-gradient(135deg, 
+        rgba(74, 21, 22, 0.9) 0%, 
+        rgba(45, 12, 13, 0.95) 100%);
+    border: 2px solid transparent;
+    border-radius: 15px;
+    padding: 30px 25px;
+    text-align: center;
+    background-image: 
+        linear-gradient(135deg, rgba(74, 21, 22, 0.9), rgba(45, 12, 13, 0.95)),
+        linear-gradient(135deg, var(--ct-gold), var(--ct-gold-light), var(--ct-gold));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.3),
+        inset 0 0 30px rgba(201, 151, 61, 0.05);
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 25px rgba(201, 151, 61, 0.3),
+        inset 0 0 30px rgba(201, 151, 61, 0.1);
+}
+
+.info-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, var(--ct-gold), var(--ct-gold-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 20px rgba(201, 151, 61, 0.4);
+}
+
+.info-icon svg {
+    width: 28px;
+    height: 28px;
+    color: var(--ct-dark-maroon);
+}
+
+.info-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--ct-gold);
+    margin-bottom: 5px;
+}
+
+.info-title-tamil {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 0.85rem;
+    color: var(--ct-cream);
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.info-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.95rem;
+    color: var(--ct-cream);
+    line-height: 1.6;
+    margin: 5px 0;
+    opacity: 0.9;
+}
+
+/* ============================================
+   CONTACT FORM & MAP GRID
+   ============================================ */
+.contact-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+/* Form Wrapper */
+.contact-form-wrapper {
+    background: linear-gradient(135deg, 
+        rgba(74, 21, 22, 0.9) 0%, 
+        rgba(45, 12, 13, 0.95) 100%);
+    border: 2px solid transparent;
+    border-radius: 20px;
+    padding: 40px;
+    background-image: 
+        linear-gradient(135deg, rgba(74, 21, 22, 0.9), rgba(45, 12, 13, 0.95)),
+        linear-gradient(135deg, var(--ct-gold), var(--ct-gold-light), var(--ct-gold));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.3),
+        inset 0 0 30px rgba(201, 151, 61, 0.05);
+}
+
+.form-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--ct-gold);
+    margin-bottom: 5px;
+}
+
+.form-title-tamil {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 0.95rem;
+    color: var(--ct-cream);
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ct-gold);
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    color: var(--ct-cream);
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(201, 151, 61, 0.3);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--ct-gold);
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 20px rgba(201, 151, 61, 0.3);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(245, 230, 211, 0.5);
+}
+
+.form-group select {
+    color: var(--ct-cream);
+}
+
+.form-group select option {
+    background: var(--ct-dark-maroon);
+    color: var(--ct-cream);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 35px;
+    background: linear-gradient(135deg, var(--ct-gold), var(--ct-gold-dark));
+    color: var(--ct-dark-maroon);
+    border: none;
+    border-radius: 50px;
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(201, 151, 61, 0.4);
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 15px 40px rgba(201, 151, 61, 0.5),
+        0 0 20px rgba(201, 151, 61, 0.3);
+}
+
+.submit-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.submit-btn:hover svg {
+    transform: translateX(5px);
+}
+
+/* Map Wrapper */
+.map-wrapper {
+    background: linear-gradient(135deg, 
+        rgba(74, 21, 22, 0.9) 0%, 
+        rgba(45, 12, 13, 0.95) 100%);
+    border: 2px solid transparent;
+    border-radius: 20px;
+    padding: 40px;
+    background-image: 
+        linear-gradient(135deg, rgba(74, 21, 22, 0.9), rgba(45, 12, 13, 0.95)),
+        linear-gradient(135deg, var(--ct-gold), var(--ct-gold-light), var(--ct-gold));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.3),
+        inset 0 0 30px rgba(201, 151, 61, 0.05);
+}
+
+.map-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--ct-gold);
+    margin-bottom: 5px;
+}
+
+.map-title-tamil {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 0.95rem;
+    color: var(--ct-cream);
+    margin-bottom: 25px;
+    opacity: 0.8;
+}
+
+.map-container {
+    width: 100%;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(74, 21, 22, 0.15);
+    margin-bottom: 25px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* Quick Contact Buttons */
+.quick-contact {
+    display: flex;
+    gap: 15px;
+}
+
+.quick-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.phone-btn {
+    background: linear-gradient(135deg, var(--ct-gold), var(--ct-gold-dark));
+    color: var(--ct-dark-maroon);
+}
+
+.phone-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(201, 151, 61, 0.4);
+}
+
+.whatsapp-btn {
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: white;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.contact-footer {
+    background: linear-gradient(180deg, 
+        var(--ct-dark-maroon) 0%, 
+        #1a0a0a 100%);
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    z-index: 200;
+}
+
+.contact-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        transparent 0%,
+        var(--ct-gold) 50%,
+        transparent 100%);
+}
+
+.footer-content p {
+    font-family: 'Lato', sans-serif;
+    color: var(--ct-cream);
+    opacity: 0.8;
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   WHATSAPP FLOATING BUTTON
+   ============================================ */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 25px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 35px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-float svg {
+    width: 32px;
+    height: 32px;
+    color: white;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 1200px) {
+    .contact-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1024px) {
+    .contact-nav {
+        padding: 10px 20px;
+    }
+
+    .contact-header .nav-menu {
+        gap: 15px;
+    }
+
+    .contact-header .nav-menu li a {
+        font-size: 0.75rem;
+        padding: 8px 12px;
+    }
+
+    .contact-content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-header .menu-toggle {
+        display: flex;
+    }
+
+    .contact-header .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: linear-gradient(180deg, 
+            var(--ct-dark-maroon) 0%, 
+            var(--ct-maroon) 100%);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        transition: right 0.4s ease;
+        z-index: 1000;
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-header .nav-menu.active {
+        right: 0;
+    }
+
+    .contact-header .nav-menu li a {
+        font-size: 1rem;
+        padding: 15px 25px;
+    }
+
+    /* Mobile Dropdown Styles */
+    .contact-header .nav-dropdown .dropdown-toggle {
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .contact-header .nav-dropdown .dropdown-arrow {
+        margin-top: 0;
+    }
+
+    .contact-header .nav-dropdown .dropdown-menu {
+        position: static;
+        transform: none;
+        min-width: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        border: none;
+        border-radius: 8px;
+        margin-top: 10px;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 1;
+        visibility: visible;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .contact-header .nav-dropdown.active .dropdown-menu {
+        max-height: 300px;
+        padding: 10px 0;
+    }
+
+    .contact-header .nav-dropdown .dropdown-menu::before {
+        display: none;
+    }
+
+    .contact-header .nav-dropdown .dropdown-menu li a {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .contact-header .nav-dropdown .dropdown-menu li a:hover {
+        padding-left: 20px;
+    }
+
+    .nav-logo img {
+        height: 50px;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .contact-section {
+        padding: 40px 20px;
+    }
+
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .contact-form-wrapper,
+    .map-wrapper {
+        padding: 25px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-contact {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .contact-section {
+        padding: 30px 15px;
+    }
+
+    .form-title,
+    .map-title {
+        font-size: 1.3rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
