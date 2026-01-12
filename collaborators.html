@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborators - AVANTI Mahal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Comic+Relief:wght@400;700&family=Cinzel:wght@400;500;600;700&family=Noto+Serif+Tamil:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="collaborators.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body class="collaborators-page">
+    <!-- Multiple Rotating Mandalas -->
+    <div class="mandala-rotate-1"></div>
+    <div class="mandala-rotate-2"></div>
+    <div class="mandala-rotate-3"></div>
+
+    <!-- Navigation Header -->
+    <header class="collaborators-header">
+        <nav class="collaborators-nav">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="AVANTI Mahal">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Avanti's <br><span>Home</span></a></li>
+                <li><a href="amenities.html">Avanti's <br><span>Amenities</span></a></li>
+                <li><a href="gallery.html">Avanti's <br><span>Gallery</span></a></li>
+                <li><a href="events.html">Avanti's <br><span>Events</span></a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="dropdown-toggle">Avanti's <br><span>World</span>
+                        <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="nearby-attractions.html">Attractions</a></li>
+                        <li><a href="collaborators.html" class="active">Collaborators</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Mobile Menu Toggle -->
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="collaborators-main">
+        <!-- Section Title -->
+        <div class="section-intro">
+            <div class="header-titles">
+                <h1 class="page-title">Our Trusted Partners</h1>
+                <p class="page-title-tamil">எங்கள் நம்பகமான கூட்டாளிகள்</p>
+                <p class="page-subtitle">We've partnered with the best professionals to make your celebration truly memorable. From photographers to decorators, we've got you covered.</p>
+            </div>
+        </div>
+
+        <!-- Collaborators Grid -->
+        <section class="collaborators-grid">
+            
+            <!-- Photographers -->
+            <div class="collab-category">
+                <div class="category-header">
+                    <div class="category-icon">📸</div>
+                    <h2 class="category-title">Photography & Videography</h2>
+                    <p class="category-tamil">புகைப்படம் & வீடியோ</p>
+                </div>
+                <div class="collab-cards">
+                    <article class="collab-card" data-animate="card">
+                        <div class="card-image">
+                            <img src="img/home1.jpg" alt="Studio Photography">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Studio Name</h3>
+                            <p class="card-specialty">Wedding & Event Photography</p>
+                            <p class="card-description">Professional photography services with modern equipment and creative vision.</p>
+                            <div class="card-contact">
+                                <a href="tel:+919876543210" class="contact-btn-small">📞 Contact</a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="collab-card" data-animate="card">
+                        <div class="card-image">
+                            <img src="img/home.jpg" alt="Video Production">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Video Studio</h3>
+                            <p class="card-specialty">Cinematic Wedding Films</p>
+                            <p class="card-description">Capture your special moments with stunning cinematic quality videos.</p>
+                            <div class="card-contact">
+                                <a href="tel:+919876543210" class="contact-btn-small">📞 Contact</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Mehndi Artists -->
+            <div class="collab-category">
+                <div class="category-header">
+                    <div class="category-icon">🎨</div>
+                    <h2 class="category-title">Mehndi Artists</h2>
+                    <p class="category-tamil">மெகந்தி கலைஞர்கள்</p>
+                </div>
+                <div class="collab-cards">
+                    <article class="collab-card" data-animate="card">
+                        <div class="card-image">
+                            <img src="img/home4.jpg" alt="Mehndi Artist">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Mehndi Expert</h3>
+                            <p class="card-specialty">Bridal & Traditional Mehndi</p>
+                            <p class="card-description">Intricate and beautiful mehndi designs for all occasions.</p>
+                            <div class="card-contact">
+                                <a href="tel:+919876543210" class="contact-btn-small">📞 Contact</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Makeup & Beauty -->
+            <div class="collab-category">
+                <div class="category-header">
+                    <div class="category-icon">💄</div>
+                    <h2 class="category-title">Makeup & Beauty</h2>
+                    <p class="category-tamil">அழகு நிலையம்</p>
+                </div>
+                <div class="collab-cards">
+                    <article class="collab-card" data-animate="card">
+                        <div class="card-image">
+                            <img src="img/home1.jpg" alt="Bridal Makeup">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Beauty Salon</h3>
+                            <p class="card-specialty">Bridal Makeup & Styling</p>
+                            <p class="card-description">Expert bridal makeup artists for your perfect wedding look.</p>
+                            <div class="card-contact">
+                                <a href="tel:+919876543210" class="contact-btn-small">📞 Contact</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Decorators -->
+            <div class="collab-category">
+                <div class="category-header">
+                    <div class="category-icon">🌸</div>
+                    <h2 class="category-title">Decorators & Florists</h2>
+                    <p class="category-tamil">அலங்கார நிபுணர்கள்</p>
+                </div>
+                <div class="collab-cards">
+                    <article class="collab-card" data-animate="card">
+                        <div class="card-image">
+                            <img src="img/stage.png" alt="Stage Decoration">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Decor Studio</h3>
+                            <p class="card-specialty">Stage & Venue Decoration</p>
+                            <p class="card-description">Transform your venue into a magical celebration space.</p>
+                            <div class="card-contact">
+                                <a href="tel:+919876543210" class="contact-btn-small">📞 Contact</a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="collab-card" data-animate="card">
+                        <div class="card-image">
+                            <img src="img/home.jpg" alt="Floral Arrangement">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Flower Shop</h3>
+                            <p class="card-specialty">Floral Arrangements</p>
+                            <p class="card-description">Beautiful flower decorations and bouquets for your event.</p>
+                            <div class="card-contact">
+                                <a href="tel:+919876543210" class="contact-btn-small">📞 Contact</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Catering -->
+            <div class="collab-category">
+                <div class="category-header">
+                    <div class="category-icon">🍽️</div>
+                    <h2 class="category-title">Catering Services</h2>
+                    <p class="category-tamil">உணவு சேவைகள்</p>
+                </div>
+                <div class="collab-cards">
+                    <article class="collab-card" data-animate="card">
+                        <div class="card-image">
+                            <img src="img/home4.jpg" alt="Catering">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Catering Service</h3>
+                            <p class="card-specialty">Traditional & Multi-Cuisine</p>
+                            <p class="card-description">Delicious food prepared by expert chefs for your guests.</p>
+                            <div class="card-contact">
+                                <a href="tel:+919876543210" class="contact-btn-small">📞 Contact</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Music & Entertainment -->
+            <div class="collab-category">
+                <div class="category-header">
+                    <div class="category-icon">🎵</div>
+                    <h2 class="category-title">Music & Entertainment</h2>
+                    <p class="category-tamil">இசை & பொழுதுபோக்கு</p>
+                </div>
+                <div class="collab-cards">
+                    <article class="collab-card" data-animate="card">
+                        <div class="card-image">
+                            <img src="img/home1.jpg" alt="DJ Services">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">DJ & Sound</h3>
+                            <p class="card-specialty">DJ & Live Music</p>
+                            <p class="card-description">Professional sound systems and DJ services for events.</p>
+                            <div class="card-contact">
+                                <a href="tel:+919876543210" class="contact-btn-small">📞 Contact</a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="collab-card" data-animate="card">
+                        <div class="card-image">
+                            <img src="img/home.jpg" alt="Nadaswaram">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Traditional Music</h3>
+                            <p class="card-specialty">Nadaswaram & Thavil</p>
+                            <p class="card-description">Traditional temple music for auspicious ceremonies.</p>
+                            <div class="card-contact">
+                                <a href="tel:+919876543210" class="contact-btn-small">📞 Contact</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Invitation & Printing -->
+            <div class="collab-category">
+                <div class="category-header">
+                    <div class="category-icon">💌</div>
+                    <h2 class="category-title">Invitations & Printing</h2>
+                    <p class="category-tamil">அழைப்பிதழ் & அச்சு</p>
+                </div>
+                <div class="collab-cards">
+                    <article class="collab-card" data-animate="card">
+                        <div class="card-image">
+                            <img src="img/home4.jpg" alt="Wedding Cards">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Print Studio</h3>
+                            <p class="card-specialty">Wedding Cards & Invitations</p>
+                            <p class="card-description">Beautiful custom wedding invitations and event stationery.</p>
+                            <div class="card-contact">
+                                <a href="tel:+919876543210" class="contact-btn-small">📞 Contact</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- CTA Section -->
+        <section class="collab-cta">
+            <div class="cta-content">
+                <h2>Want to Partner with Us?</h2>
+                <p class="cta-tamil">எங்களுடன் இணைய விரும்புகிறீர்களா?</p>
+                <p>If you're a professional in the wedding industry and want to collaborate with Avanti Mahal, we'd love to hear from you!</p>
+                <a href="contact.html" class="btn cta-btn">Contact Us →</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="common-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="img/logo.png" alt="AVANTI Mahal" class="footer-logo">
+                    <p class="footer-tagline">Creating memories that last a lifetime</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><span>📍</span> Periyakulam, Theni District</p>
+                    <p><span>📞</span> +91 98765 43210</p>
+                    <p><span>✉️</span> info@avantimahal.com</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/919876543210" aria-label="WhatsApp">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AVANTI Mahal. All rights reserved.</p>
+                <p>Maintained by <a href="#">Future Technology</a>, Theni</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+        aria-label="Contact us on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+            <path
+                d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 339.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56 81.2 56 130.5 0 101.8-84.1 184.6-186.1 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+        </svg>
+    </a>
+
+    <script src="script.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Card Animation
+        if (typeof gsap !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger);
+            
+            gsap.utils.toArray('.collab-card').forEach((card, i) => {
+                gsap.from(card, {
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top 85%',
+                        toggleActions: 'play none none none'
+                    },
+                    opacity: 0,
+                    y: 60,
+                    duration: 0.6,
+                    delay: i * 0.1,
+                    ease: 'power2.out'
+                });
+            });
+
+            gsap.utils.toArray('.category-header').forEach((header) => {
+                gsap.from(header, {
+                    scrollTrigger: {
+                        trigger: header,
+                        start: 'top 85%',
+                    },
+                    opacity: 0,
+                    x: -50,
+                    duration: 0.6,
+                    ease: 'power2.out'
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
+
+
+

@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Hero text animation (home page only)
+    // DISABLED - Word-by-word animation is handled in script.js
+    /*
     const heroText = document.querySelector('.hero-text');
     if (heroText) {
         const heroSubtitle = heroText.querySelector('.hero-subtitle');
@@ -73,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }, "-=0.4");
         }
     }
+    */
     
     // Mission & Vision sections animation
     const missionSection = document.querySelector('.mission-section');
@@ -138,6 +141,92 @@ document.addEventListener('DOMContentLoaded', function() {
             duration: 1.2,
             delay: 0.3,
             ease: "power2.out"
+        });
+    }
+    
+    // Celebrating section - Scrolls naturally over the hero (sticky hero effect)
+    // Only animate internal content when section comes into view
+    const celebratingSection = document.querySelector('.celebrating-section');
+    if (celebratingSection) {
+        const celebratingContent = celebratingSection.querySelector('.celebrating-content');
+        const celebratingImage = celebratingSection.querySelector('.celebrating-image');
+        
+        if (celebratingContent) {
+            ScrollTrigger.create({
+                trigger: celebratingSection,
+                start: "top 75%",
+                onEnter: () => celebratingContent.classList.add('animate-in'),
+                onLeaveBack: () => celebratingContent.classList.remove('animate-in')
+            });
+        }
+        
+        if (celebratingImage) {
+            ScrollTrigger.create({
+                trigger: celebratingSection,
+                start: "top 75%",
+                onEnter: () => celebratingImage.classList.add('animate-in'),
+                onLeaveBack: () => celebratingImage.classList.remove('animate-in')
+            });
+        }
+    }
+    
+    // Parallax section animations - content scrolls over fixed background
+    const parallaxSection = document.querySelector('.parallax-section');
+    if (parallaxSection) {
+        const parallaxHeading = parallaxSection.querySelector('.parallax-heading');
+        const parallaxBoxes = parallaxSection.querySelectorAll('.parallax-box');
+        const parallaxBtn = parallaxSection.querySelector('.parallax-btn');
+        
+        if (parallaxHeading) {
+            ScrollTrigger.create({
+                trigger: parallaxSection,
+                start: "top 70%",
+                onEnter: () => parallaxHeading.classList.add('animate-in'),
+                onLeaveBack: () => parallaxHeading.classList.remove('animate-in')
+            });
+        }
+        
+        parallaxBoxes.forEach(box => {
+            ScrollTrigger.create({
+                trigger: parallaxSection,
+                start: "top 60%",
+                onEnter: () => box.classList.add('animate-in'),
+                onLeaveBack: () => box.classList.remove('animate-in')
+            });
+        });
+        
+        if (parallaxBtn) {
+            ScrollTrigger.create({
+                trigger: parallaxSection,
+                start: "top 50%",
+                onEnter: () => parallaxBtn.classList.add('animate-in'),
+                onLeaveBack: () => parallaxBtn.classList.remove('animate-in')
+            });
+        }
+    }
+    
+    // Key Features section animations
+    const keyFeaturesSection = document.querySelector('.key-features-section');
+    if (keyFeaturesSection) {
+        const keyFeaturesHeading = keyFeaturesSection.querySelector('.key-features-heading');
+        const featureItems = keyFeaturesSection.querySelectorAll('.feature-item');
+        
+        if (keyFeaturesHeading) {
+            ScrollTrigger.create({
+                trigger: keyFeaturesSection,
+                start: "top 70%",
+                onEnter: () => keyFeaturesHeading.classList.add('animate-in'),
+                onLeaveBack: () => keyFeaturesHeading.classList.remove('animate-in')
+            });
+        }
+        
+        featureItems.forEach(item => {
+            ScrollTrigger.create({
+                trigger: keyFeaturesSection,
+                start: "top 60%",
+                onEnter: () => item.classList.add('animate-in'),
+                onLeaveBack: () => item.classList.remove('animate-in')
+            });
         });
     }
     
@@ -332,29 +421,54 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Logo animation on load
+    // Logo and navigation menu animations
+    // On home page (with doors), these run AFTER doors open
+    // On other pages, they run immediately
     const logo = document.querySelector('.logo img');
+    const navItems = document.querySelectorAll('.nav-menu a');
+    const doorLeft = document.getElementById('doorLeft');
+    const isHomePage = doorLeft !== null;
+    
+    function animateNavbarContent() {
     if (logo) {
         gsap.from(logo, {
             opacity: 0,
             scale: 0.8,
             duration: 0.8,
-            ease: "back.out(1.2)",
-            delay: 0.2
+                ease: "back.out(1.2)"
         });
     }
     
-    // Navigation menu items animation
-    const navItems = document.querySelectorAll('.nav-menu a');
     if (navItems.length > 0) {
         gsap.from(navItems, {
             opacity: 0,
             y: -20,
             duration: 0.6,
             stagger: 0.1,
-            delay: 0.5,
+                delay: 0.2,
             ease: "power2.out"
         });
+        }
+    }
+    
+    if (isHomePage) {
+        // On home page, wait for navbar to become visible (listen for class change)
+        const navbarEl = document.querySelector('.navbar');
+        if (navbarEl) {
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.attributeName === 'class' && navbarEl.classList.contains('visible')) {
+                        // Small delay to let the navbar fade in first
+                        setTimeout(animateNavbarContent, 200);
+                        observer.disconnect();
+                    }
+                });
+            });
+            observer.observe(navbarEl, { attributes: true });
+        }
+    } else {
+        // On other pages, animate immediately
+        animateNavbarContent();
     }
     
     // Form inputs animation
