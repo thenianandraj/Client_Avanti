@@ -49,8 +49,13 @@ body.events-page {
 }
 
 @keyframes rotateMandala {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* ============================================
@@ -62,9 +67,9 @@ body.events-page {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: linear-gradient(180deg, 
-        rgba(74, 21, 22, 0.98) 0%, 
-        rgba(45, 12, 13, 0.98) 100%);
+    background: linear-gradient(180deg,
+            rgba(74, 21, 22, 0.98) 0%,
+            rgba(45, 12, 13, 0.98) 100%);
     box-shadow: 0 4px 30px rgba(45, 12, 13, 0.4);
     transition: all 0.25s ease;
 }
@@ -76,17 +81,15 @@ body.events-page {
     left: 0;
     right: 0;
     height: 6px;
-    background: repeating-linear-gradient(
-        90deg,
-        var(--ev-gold) 0px,
-        var(--ev-gold) 4px,
-        transparent 4px,
-        transparent 12px,
-        var(--ev-maroon) 12px,
-        var(--ev-maroon) 16px,
-        transparent 16px,
-        transparent 24px
-    );
+    background: repeating-linear-gradient(90deg,
+            var(--ev-gold) 0px,
+            var(--ev-gold) 4px,
+            transparent 4px,
+            transparent 12px,
+            var(--ev-maroon) 12px,
+            var(--ev-maroon) 16px,
+            transparent 16px,
+            transparent 24px);
     opacity: 0.8;
 }
 
@@ -185,9 +188,9 @@ body.events-page {
     left: 50%;
     transform: translateX(-50%) translateY(10px);
     min-width: 180px;
-    background: linear-gradient(180deg, 
-        rgba(45, 12, 13, 0.98) 0%, 
-        rgba(74, 21, 22, 0.98) 100%);
+    background: linear-gradient(180deg,
+            rgba(45, 12, 13, 0.98) 0%,
+            rgba(74, 21, 22, 0.98) 100%);
     border: 1px solid rgba(201, 151, 61, 0.3);
     border-radius: 12px;
     padding: 10px 0;
@@ -206,10 +209,10 @@ body.events-page {
     left: 20px;
     right: 20px;
     height: 2px;
-    background: linear-gradient(90deg, 
-        transparent, 
-        var(--ev-gold), 
-        transparent);
+    background: linear-gradient(90deg,
+            transparent,
+            var(--ev-gold),
+            transparent);
     border-radius: 2px;
 }
 
@@ -265,10 +268,10 @@ body.events-page {
     display: block;
     margin: 0 15px;
     height: 1px;
-    background: linear-gradient(90deg, 
-        transparent, 
-        rgba(201, 151, 61, 0.2), 
-        transparent);
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(201, 151, 61, 0.2),
+            transparent);
 }
 
 /* Mobile Menu Toggle */
@@ -312,8 +315,8 @@ body.events-page {
     position: relative;
     min-height: 400px;
     background: linear-gradient(180deg,
-        var(--ev-dark-maroon) 0%,
-        var(--ev-maroon) 100%);
+            var(--ev-dark-maroon) 0%,
+            var(--ev-maroon) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -406,8 +409,8 @@ body.events-page {
     padding: 140px 20px 80px;
     text-align: center;
     background: linear-gradient(180deg,
-        var(--ev-dark-maroon) 0%,
-        var(--ev-maroon) 100%);
+            var(--ev-dark-maroon) 0%,
+            var(--ev-maroon) 100%);
     position: relative;
 }
 
@@ -545,8 +548,8 @@ body.events-page {
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg,
-        transparent 0%,
-        rgba(74, 21, 22, 0.6) 100%);
+            transparent 0%,
+            rgba(74, 21, 22, 0.6) 100%);
 }
 
 .event-card .overlay-pattern {
@@ -667,8 +670,8 @@ body.events-page {
 .why-choose-section {
     padding: 80px 20px;
     background: linear-gradient(180deg,
-        var(--ev-dark-maroon) 0%,
-        var(--ev-maroon) 100%);
+            var(--ev-dark-maroon) 0%,
+            var(--ev-maroon) 100%);
     position: relative;
     overflow: hidden;
 }
@@ -728,9 +731,9 @@ body.events-page {
 .feature-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, 
-        rgba(201, 151, 61, 0.2), 
-        rgba(201, 151, 61, 0.1));
+    background: linear-gradient(135deg,
+            rgba(201, 151, 61, 0.2),
+            rgba(201, 151, 61, 0.1));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -765,8 +768,8 @@ body.events-page {
 .events-cta {
     padding: 80px 20px;
     background: linear-gradient(135deg,
-        var(--ev-cream) 0%,
-        var(--ev-beige) 100%);
+            var(--ev-cream) 0%,
+            var(--ev-beige) 100%);
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -884,8 +887,8 @@ body.events-page {
    ============================================ */
 .events-footer {
     background: linear-gradient(180deg,
-        var(--ev-dark-maroon) 0%,
-        var(--ev-deep) 100%);
+            var(--ev-dark-maroon) 0%,
+            var(--ev-deep) 100%);
     padding: 50px 20px 30px;
     text-align: center;
 }
@@ -964,9 +967,9 @@ body.events-page {
         right: -100%;
         width: 280px;
         height: 100vh;
-        background: linear-gradient(180deg, 
-            var(--ev-dark-maroon) 0%, 
-            var(--ev-maroon) 100%);
+        background: linear-gradient(180deg,
+                var(--ev-dark-maroon) 0%,
+                var(--ev-maroon) 100%);
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -1096,4 +1099,3 @@ body.events-page {
         font-size: 1.5rem;
     }
 }
-

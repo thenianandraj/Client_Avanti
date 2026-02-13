@@ -1303,6 +1303,20 @@ body.home-page footer p {
     opacity: 0.8;
 }
 
+body.home-page .feature-item .en-sub {
+    font-size: 0.85rem;
+    color: var(--hm-gold);
+    margin-bottom: 8px;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+body.home-page .feature-item .tamil-text {
+    font-size: 0.8rem;
+    color: var(--hm-cream);
+    opacity: 0.8;
+}
+
 /* ============================================
    RESPONSIVE DESIGN
    ============================================ */
