@@ -99,6 +99,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="nearby-attractions.html">Attractions</a></li>
                         <li><a href="collaborators.html" class="active">Collaborators</a></li>
+                        <li><a href="suggestions.html">Suggestions</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </li>
@@ -422,7 +423,7 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 AVANTI Mahal. All rights reserved.</p>
-                <p>Maintained by <a href="https://tminnovations.in/" target="_blank">TM INNOVATIONS</a>, Theni</p>
+                <p>Maintained by <a href="https://tminnovations.in/" target="_blank">Future Technology, </a>Theni</p>
             </div>
         </div>
     </footer>
@@ -438,13 +439,8 @@
 
     <script src="script.js"></script>
     <script>
-        // Mobile Menu Toggle
-        document.getElementById('menuToggle').addEventListener('click', function () {
-            this.classList.toggle('active');
-            document.querySelector('.nav-menu').classList.toggle('active');
-        });
-
         // Card Animation
+
         if (typeof gsap !== 'undefined') {
             gsap.registerPlugin(ScrollTrigger);
 
@@ -477,6 +473,203 @@
             });
         }
     </script>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/917305180177" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+        aria-label="Contact us on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+            <path
+                d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 339.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56 81.2 56 130.5 0 101.8-84.1 184.6-186.1 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+        </svg>
+    </a>
+
+    <!-- Tamil Calendar Floating Button -->
+    <button class="calendar-float" id="calendarBtn" aria-label="Tamil Muhurtham Calendar">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+            <path
+                d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192H400V448c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192z" />
+        </svg>
+        <span class="calendar-label">முகூர்த்தம்</span>
+    </button>
+
+    <!-- Tamil Muhurtham Calendar Modal -->
+    <div class="calendar-modal" id="calendarModal">
+        <div class="calendar-modal-content">
+            <button class="calendar-close" id="calendarClose">&times;</button>
+            <h2 class="calendar-title">📅 தமிழ் முகூர்த்த நாட்கள்</h2>
+            <p class="calendar-subtitle">Tamil Auspicious Dates 2026</p>
+
+            <div class="calendar-months-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+
+                <!-- January -->
+                <div class="calendar-month">
+                    <h3>ஜனவரி / January <span class="tamil-month-name">(மார்கழி - தை)</span></h3>
+                    <ul class="muhurtham-list">
+                        <li><span class="date">19</span> <span class="day">திங்கள்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">22</span> <span class="day">வியாழன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">23</span> <span class="day">வெள்ளி</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">25</span> <span class="day">ஞாயிறு</span> சுப முகூர்த்தம்</li>
+                    </ul>
+                </div>
+
+                <!-- February -->
+                <div class="calendar-month">
+                    <h3>பிப்ரவரி / February <span class="tamil-month-name">(தை - மாசி)</span></h3>
+                    <ul class="muhurtham-list">
+                        <li><span class="date">02</span> <span class="day">திங்கள்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">05</span> <span class="day">வியாழன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">06</span> <span class="day">வெள்ளி</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">09</span> <span class="day">திங்கள்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">11</span> <span class="day">புதன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">12</span> <span class="day">வியாழன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">16</span> <span class="day">திங்கள்</span> சுப முகூர்த்தம்</li>
+                    </ul>
+                </div>
+
+                <!-- March -->
+                <div class="calendar-month">
+                    <h3>மார்ச் / March <span class="tamil-month-name">(மாசி - பங்குனி)</span></h3>
+                    <ul class="muhurtham-list">
+                        <li><span class="date">02</span> <span class="day">திங்கள்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">05</span> <span class="day">வியாழன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">06</span> <span class="day">வெள்ளி</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">09</span> <span class="day">திங்கள்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">11</span> <span class="day">புதன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">13</span> <span class="day">வெள்ளி</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">16</span> <span class="day">திங்கள்</span> சுப முகூர்த்தம்</li>
+                    </ul>
+                </div>
+
+                <!-- April -->
+                <div class="calendar-month">
+                    <h3>ஏப்ரல் / April <span class="tamil-month-name">(பங்குனி - சித்திரை)</span></h3>
+                    <ul class="muhurtham-list">
+                        <li><span class="date">20</span> <span class="day">திங்கள்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">22</span> <span class="day">புதன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">23</span> <span class="day">வியாழன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">24</span> <span class="day">வெள்ளி</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">26</span> <span class="day">ஞாயிறு</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">27</span> <span class="day">திங்கள்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">30</span> <span class="day">வியாழன்</span> சுப முகூர்த்தம்</li>
+                    </ul>
+                </div>
+
+                <!-- May -->
+                <div class="calendar-month">
+                    <h3>மே / May <span class="tamil-month-name">(சித்திரை - வைகாசி)</span></h3>
+                    <ul class="muhurtham-list">
+                        <li><span class="date">01</span> <span class="day">வெள்ளி</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">04</span> <span class="day">திங்கள்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">07</span> <span class="day">வியாழன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">08</span> <span class="day">வெள்ளி</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">11</span> <span class="day">திங்கள்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">18</span> <span class="day">திங்கள்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">21</span> <span class="day">வியாழன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">22</span> <span class="day">வெள்ளி</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">24</span> <span class="day">ஞாயிறு</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">25</span> <span class="day">திங்கள்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">27</span> <span class="day">புதன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">28</span> <span class="day">வியாழன்</span> சுப முகூர்த்தம்</li>
+                    </ul>
+                </div>
+
+                <!-- June -->
+                <div class="calendar-month">
+                    <h3>ஜூன் / June <span class="tamil-month-name">(வைகாசி - ஆனி)</span></h3>
+                    <ul class="muhurtham-list">
+                        <li><span class="date">01</span> <span class="day">திங்கள்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">04</span> <span class="day">வியாழன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">08</span> <span class="day">திங்கள்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">15</span> <span class="day">திங்கள்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">22</span> <span class="day">திங்கள்</span> சுப முகூர்த்தம்</li>
+                    </ul>
+                </div>
+
+                <!-- July -->
+                <div class="calendar-month">
+                    <h3>ஜூலை / July <span class="tamil-month-name">(ஆனி - ஆடி)</span></h3>
+                    <ul class="muhurtham-list">
+                        <li><span class="date">02</span> <span class="day">வியாழன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">05</span> <span class="day">ஞாயிறு</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">06</span> <span class="day">திங்கள்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">09</span> <span class="day">வியாழன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">10</span> <span class="day">வெள்ளி</span> சுப முகூர்த்தம்</li>
+                    </ul>
+                </div>
+
+                <!-- August -->
+                <div class="calendar-month">
+                    <h3>ஆகஸ்ட் / August <span class="tamil-month-name">(ஆடி - ஆவணி)</span></h3>
+                    <ul class="muhurtham-list">
+                        <li><span class="date">20</span> <span class="day">வியாழன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">21</span> <span class="day">வெள்ளி</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">23</span> <span class="day">ஞாயிறு</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">26</span> <span class="day">புதன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">27</span> <span class="day">வியாழன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">30</span> <span class="day">ஞாயிறு</span> சுப முகூர்த்தம்</li>
+                    </ul>
+                </div>
+
+                <!-- September -->
+                <div class="calendar-month">
+                    <h3>செப்டம்பர் / September <span class="tamil-month-name">(ஆவணி - புரட்டாசி)</span></h3>
+                    <ul class="muhurtham-list">
+                        <li><span class="date">02</span> <span class="day">புதன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">03</span> <span class="day">வியாழன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">04</span> <span class="day">வெள்ளி</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">06</span> <span class="day">ஞாயிறு</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">09</span> <span class="day">புதன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">10</span> <span class="day">வியாழன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">11</span> <span class="day">வெள்ளி</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">14</span> <span class="day">திங்கள்</span> சுப முகூர்த்தம்</li>
+                    </ul>
+                </div>
+
+                <!-- October -->
+                <div class="calendar-month">
+                    <h3>அக்டோபர் / October <span class="tamil-month-name">(புரட்டாசி - ஐப்பசி)</span></h3>
+                    <ul class="muhurtham-list">
+                        <li><span class="date">19</span> <span class="day">திங்கள்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">21</span> <span class="day">புதன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">22</span> <span class="day">வியாழன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">23</span> <span class="day">வெள்ளி</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">26</span> <span class="day">திங்கள்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">29</span> <span class="day">வியாழன்</span> சுப முகூர்த்தம்</li>
+                    </ul>
+                </div>
+
+                <!-- November -->
+                <div class="calendar-month">
+                    <h3>நவம்பர் / November <span class="tamil-month-name">(ஐப்பசி - கார்த்திகை)</span></h3>
+                    <ul class="muhurtham-list">
+                        <li><span class="date">01</span> <span class="day">ஞாயிறு</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">12</span> <span class="day">வியாழன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">18</span> <span class="day">புதன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">19</span> <span class="day">வியாழன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">20</span> <span class="day">வெள்ளி</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">25</span> <span class="day">புதன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">26</span> <span class="day">வியாழன்</span> சுப முகூர்த்தம்</li>
+                    </ul>
+                </div>
+
+                <!-- December -->
+                <div class="calendar-month">
+                    <h3>டிசம்பர் / December <span class="tamil-month-name">(கார்த்திகை - மார்கழி)</span></h3>
+                    <ul class="muhurtham-list">
+                        <li><span class="date">02</span> <span class="day">புதன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">03</span> <span class="day">வியாழன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">04</span> <span class="day">வெள்ளி</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">09</span> <span class="day">புதன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">10</span> <span class="day">வியாழன்</span> சுப முகூர்த்தம்</li>
+                        <li><span class="date">11</span> <span class="day">வெள்ளி</span> சுப முகூர்த்தம்</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

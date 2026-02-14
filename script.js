@@ -370,17 +370,23 @@ document.addEventListener('DOMContentLoaded', function () {
                     // Remove heart emoji from text before processing
                     const text = enText.textContent.replace(/❤️/g, '').replace(/🤍/g, '').trim();
                     const hasHeartIcon = originalHTML.includes('heart-icon');
+                    const words = text.split(/\s+/);
                     let newHTML = '';
-                    for (let i = 0; i < text.length; i++) {
-                        if (text[i] === ' ') {
-                            newHTML += ' ';
-                        } else {
-                            newHTML += '<span class="letter">' + text[i] + '</span>';
+
+                    words.forEach((word, index) => {
+                        newHTML += '<span style="display: inline-block; white-space: nowrap;">';
+                        for (let i = 0; i < word.length; i++) {
+                            newHTML += '<span class="letter">' + word[i] + '</span>';
                         }
-                    }
+                        newHTML += '</span>';
+                        if (index < words.length - 1) {
+                            newHTML += ' ';
+                        }
+                    });
+
                     // Keep heart icon if exists (only add once)
                     if (hasHeartIcon) {
-                        newHTML += ' <span class="heart-icon">❤️</span>';
+                        newHTML += ' <span class="heart-icon" style="display: inline-block;">❤️</span>';
                     }
                     enText.innerHTML = newHTML;
                     enText.classList.add('letter-wrapped');

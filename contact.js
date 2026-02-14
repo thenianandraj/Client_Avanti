@@ -2,39 +2,39 @@
 // CONTACT PAGE - ANIMATIONS
 // ============================================
 
-document.addEventListener('DOMContentLoaded', function() {
-    
+document.addEventListener('DOMContentLoaded', function () {
+
     // ============================================
     // MOBILE MENU TOGGLE
     // ============================================
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.querySelector('.nav-menu');
-    
+
     if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', function() {
+        menuToggle.addEventListener('click', function () {
             navMenu.classList.toggle('active');
             menuToggle.classList.toggle('active');
         });
-        
+
         // Close menu when clicking on a link (except dropdown toggles)
         navMenu.querySelectorAll('a:not(.dropdown-toggle)').forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function () {
                 navMenu.classList.remove('active');
                 menuToggle.classList.remove('active');
             });
         });
     }
-    
+
     // ============================================
     // DROPDOWN MENU TOGGLE FOR MOBILE
     // ============================================
     const navDropdowns = document.querySelectorAll('.nav-dropdown');
-    
-    navDropdowns.forEach(function(dropdown) {
+
+    navDropdowns.forEach(function (dropdown) {
         const toggle = dropdown.querySelector('.dropdown-toggle');
-        
+
         if (toggle) {
-            toggle.addEventListener('click', function(e) {
+            toggle.addEventListener('click', function (e) {
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
                     dropdown.classList.toggle('active');
@@ -93,14 +93,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // INFO CARDS - POP UP ANIMATION
     // ============================================
     const infoCards = document.querySelectorAll('.info-card');
-    
+
     infoCards.forEach((card, index) => {
-        gsap.set(card, { 
-            opacity: 0, 
+        gsap.set(card, {
+            opacity: 0,
             scale: 0.5,
             y: 30
         });
-        
+
         gsap.to(card, {
             scrollTrigger: {
                 trigger: card,
@@ -120,10 +120,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // FORM WRAPPER ANIMATION
     // ============================================
     const formWrapper = document.querySelector('.contact-form-wrapper');
-    
+
     if (formWrapper) {
         gsap.set(formWrapper, { opacity: 0, x: -50 });
-        
+
         gsap.to(formWrapper, {
             scrollTrigger: {
                 trigger: formWrapper,
@@ -141,10 +141,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // MAP WRAPPER ANIMATION
     // ============================================
     const mapWrapper = document.querySelector('.map-wrapper');
-    
+
     if (mapWrapper) {
         gsap.set(mapWrapper, { opacity: 0, x: 50 });
-        
+
         gsap.to(mapWrapper, {
             scrollTrigger: {
                 trigger: mapWrapper,
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // FORM FIELDS ANIMATION
     // ============================================
     const formGroups = document.querySelectorAll('.form-group');
-    
+
     formGroups.forEach((group, index) => {
         gsap.from(group, {
             scrollTrigger: {
@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // HOVER EFFECTS
     // ============================================
     infoCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
+        card.addEventListener('mouseenter', function () {
             gsap.to(this, {
                 y: -8,
                 duration: 0.2,
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        card.addEventListener('mouseleave', function() {
+        card.addEventListener('mouseleave', function () {
             gsap.to(this, {
                 y: 0,
                 duration: 0.2,
@@ -201,33 +201,49 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ============================================
-    // FORM SUBMISSION
+    // FORM SUBMISSION - REDIRECT TO WHATSAPP
     // ============================================
     const contactForm = document.getElementById('contactForm');
-    
+
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Get form data
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
-            
+
+            // Format message for WhatsApp
+            let message = `*New Event Inquiry from Avanti Mahal Website*\n\n`;
+            message += `*Name:* ${data.name}\n`;
+            message += `*Phone:* ${data.phone}\n`;
+            message += `*Email:* ${data.email}\n`;
+            message += `*Event Type:* ${data.event}\n`;
+            message += `*Preferred Date:* ${data.date}\n`;
+            message += `*Message:* ${data.message}\n`;
+
+            // WhatsApp number and URL
+            const whatsappNumber = '917305180177';
+            const whatsappURL = `https://api.whatsapp.com/send/?phone=${whatsappNumber}&text=${encodeURIComponent(message)}&type=phone_number&app_absent=0`;
+
+            // Open WhatsApp in new tab
+            window.open(whatsappURL, '_blank');
+
             // Show success animation
             const submitBtn = this.querySelector('.submit-btn');
             const originalText = submitBtn.innerHTML;
-            
-            submitBtn.innerHTML = '<span>Message Sent!</span> ✓';
+
+            submitBtn.innerHTML = '<span>Opening WhatsApp...</span> ✓';
             submitBtn.style.background = 'linear-gradient(135deg, #25d366, #128c7e)';
-            
+
             // Reset after 3 seconds
             setTimeout(() => {
                 submitBtn.innerHTML = originalText;
                 submitBtn.style.background = '';
                 this.reset();
             }, 3000);
-            
-            console.log('Form submitted:', data);
+
+            console.log('Form submitted to WhatsApp:', data);
         });
     }
 

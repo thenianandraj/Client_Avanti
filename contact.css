@@ -17,11 +17,11 @@
 
 /* Body styling - Clean Maroon Background */
 body.contact-page {
-    background: linear-gradient(180deg, 
-        #5a1a1b 0%, 
-        #4a1516 30%,
-        #3d1213 70%,
-        #2d0c0d 100%);
+    background: linear-gradient(180deg,
+            #5a1a1b 0%,
+            #4a1516 30%,
+            #3d1213 70%,
+            #2d0c0d 100%);
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
@@ -33,9 +33,9 @@ body.contact-page {
 .contact-header {
     position: relative;
     z-index: 200;
-    background: linear-gradient(180deg, 
-        rgba(74, 21, 22, 0.98) 0%, 
-        rgba(45, 12, 13, 0.98) 100%);
+    background: linear-gradient(180deg,
+            rgba(74, 21, 22, 0.98) 0%,
+            rgba(45, 12, 13, 0.98) 100%);
     box-shadow: 0 4px 30px rgba(45, 12, 13, 0.4);
 }
 
@@ -46,17 +46,15 @@ body.contact-page {
     left: 0;
     right: 0;
     height: 8px;
-    background: repeating-linear-gradient(
-        90deg,
-        var(--ct-gold) 0px,
-        var(--ct-gold) 5px,
-        transparent 5px,
-        transparent 15px,
-        var(--ct-maroon) 15px,
-        var(--ct-maroon) 20px,
-        transparent 20px,
-        transparent 30px
-    );
+    background: repeating-linear-gradient(90deg,
+            var(--ct-gold) 0px,
+            var(--ct-gold) 5px,
+            transparent 5px,
+            transparent 15px,
+            var(--ct-maroon) 15px,
+            var(--ct-maroon) 20px,
+            transparent 20px,
+            transparent 30px);
     opacity: 0.7;
 }
 
@@ -151,9 +149,9 @@ body.contact-page {
     left: 50%;
     transform: translateX(-50%) translateY(10px);
     min-width: 180px;
-    background: linear-gradient(180deg, 
-        rgba(45, 12, 13, 0.98) 0%, 
-        rgba(74, 21, 22, 0.98) 100%);
+    background: linear-gradient(180deg,
+            rgba(45, 12, 13, 0.98) 0%,
+            rgba(74, 21, 22, 0.98) 100%);
     border: 1px solid rgba(201, 151, 61, 0.3);
     border-radius: 12px;
     padding: 10px 0;
@@ -172,10 +170,10 @@ body.contact-page {
     left: 20px;
     right: 20px;
     height: 2px;
-    background: linear-gradient(90deg, 
-        transparent, 
-        var(--ct-gold), 
-        transparent);
+    background: linear-gradient(90deg,
+            transparent,
+            var(--ct-gold),
+            transparent);
     border-radius: 2px;
 }
 
@@ -231,10 +229,10 @@ body.contact-page {
     display: block;
     margin: 0 15px;
     height: 1px;
-    background: linear-gradient(90deg, 
-        transparent, 
-        rgba(201, 151, 61, 0.2), 
-        transparent);
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(201, 151, 61, 0.2),
+            transparent);
 }
 
 /* Mobile Menu Toggle */
@@ -324,10 +322,10 @@ body.contact-page {
 .divider-line {
     width: 150px;
     height: 2px;
-    background: linear-gradient(90deg, 
-        transparent 0%, 
-        var(--ct-gold) 50%, 
-        transparent 100%);
+    background: linear-gradient(90deg,
+            transparent 0%,
+            var(--ct-gold) 50%,
+            transparent 100%);
 }
 
 .divider-mandala {
@@ -340,8 +338,13 @@ body.contact-page {
 }
 
 @keyframes rotateMandala {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* ============================================
@@ -367,19 +370,19 @@ body.contact-page {
 }
 
 .info-card {
-    background: linear-gradient(135deg, 
-        rgba(74, 21, 22, 0.9) 0%, 
-        rgba(45, 12, 13, 0.95) 100%);
+    background: linear-gradient(135deg,
+            rgba(74, 21, 22, 0.9) 0%,
+            rgba(45, 12, 13, 0.95) 100%);
     border: 2px solid transparent;
     border-radius: 15px;
     padding: 30px 25px;
     text-align: center;
-    background-image: 
+    background-image:
         linear-gradient(135deg, rgba(74, 21, 22, 0.9), rgba(45, 12, 13, 0.95)),
         linear-gradient(135deg, var(--ct-gold), var(--ct-gold-light), var(--ct-gold));
     background-origin: border-box;
     background-clip: padding-box, border-box;
-    box-shadow: 
+    box-shadow:
         0 10px 30px rgba(0, 0, 0, 0.3),
         inset 0 0 30px rgba(201, 151, 61, 0.05);
     transition: all 0.3s ease;
@@ -387,7 +390,7 @@ body.contact-page {
 
 .info-card:hover {
     transform: translateY(-8px);
-    box-shadow: 
+    box-shadow:
         0 20px 40px rgba(0, 0, 0, 0.4),
         0 0 25px rgba(201, 151, 61, 0.3),
         inset 0 0 30px rgba(201, 151, 61, 0.1);
@@ -447,18 +450,18 @@ body.contact-page {
 
 /* Form Wrapper */
 .contact-form-wrapper {
-    background: linear-gradient(135deg, 
-        rgba(74, 21, 22, 0.9) 0%, 
-        rgba(45, 12, 13, 0.95) 100%);
+    background: linear-gradient(135deg,
+            rgba(74, 21, 22, 0.9) 0%,
+            rgba(45, 12, 13, 0.95) 100%);
     border: 2px solid transparent;
     border-radius: 20px;
     padding: 40px;
-    background-image: 
+    background-image:
         linear-gradient(135deg, rgba(74, 21, 22, 0.9), rgba(45, 12, 13, 0.95)),
         linear-gradient(135deg, var(--ct-gold), var(--ct-gold-light), var(--ct-gold));
     background-origin: border-box;
     background-clip: padding-box, border-box;
-    box-shadow: 
+    box-shadow:
         0 15px 40px rgba(0, 0, 0, 0.3),
         inset 0 0 30px rgba(201, 151, 61, 0.05);
 }
@@ -560,7 +563,7 @@ body.contact-page {
 
 .submit-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 
+    box-shadow:
         0 15px 40px rgba(201, 151, 61, 0.5),
         0 0 20px rgba(201, 151, 61, 0.3);
 }
@@ -575,18 +578,18 @@ body.contact-page {
 
 /* Map Wrapper */
 .map-wrapper {
-    background: linear-gradient(135deg, 
-        rgba(74, 21, 22, 0.9) 0%, 
-        rgba(45, 12, 13, 0.95) 100%);
+    background: linear-gradient(135deg,
+            rgba(74, 21, 22, 0.9) 0%,
+            rgba(45, 12, 13, 0.95) 100%);
     border: 2px solid transparent;
     border-radius: 20px;
     padding: 40px;
-    background-image: 
+    background-image:
         linear-gradient(135deg, rgba(74, 21, 22, 0.9), rgba(45, 12, 13, 0.95)),
         linear-gradient(135deg, var(--ct-gold), var(--ct-gold-light), var(--ct-gold));
     background-origin: border-box;
     background-clip: padding-box, border-box;
-    box-shadow: 
+    box-shadow:
         0 15px 40px rgba(0, 0, 0, 0.3),
         inset 0 0 30px rgba(201, 151, 61, 0.05);
 }
@@ -619,6 +622,30 @@ body.contact-page {
 .map-container iframe {
     width: 100%;
     height: 100%;
+}
+
+/* Road Map Styles */
+.roadmap-container {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(201, 151, 61, 0.2);
+    padding: 10px;
+    margin-top: 15px;
+}
+
+.roadmap-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.roadmap-img:hover {
+    transform: scale(1.03);
 }
 
 /* Quick Contact Buttons */
@@ -666,9 +693,9 @@ body.contact-page {
    FOOTER
    ============================================ */
 .contact-footer {
-    background: linear-gradient(180deg, 
-        var(--ct-dark-maroon) 0%, 
-        #1a0a0a 100%);
+    background: linear-gradient(180deg,
+            var(--ct-dark-maroon) 0%,
+            #1a0a0a 100%);
     padding: 40px;
     text-align: center;
     position: relative;
@@ -682,10 +709,10 @@ body.contact-page {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, 
-        transparent 0%,
-        var(--ct-gold) 50%,
-        transparent 100%);
+    background: linear-gradient(90deg,
+            transparent 0%,
+            var(--ct-gold) 50%,
+            transparent 100%);
 }
 
 .footer-content p {
@@ -765,9 +792,9 @@ body.contact-page {
         right: -100%;
         width: 280px;
         height: 100vh;
-        background: linear-gradient(180deg, 
-            var(--ct-dark-maroon) 0%, 
-            var(--ct-maroon) 100%);
+        background: linear-gradient(180deg,
+                var(--ct-dark-maroon) 0%,
+                var(--ct-maroon) 100%);
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -882,3 +909,212 @@ body.contact-page {
     }
 }
 
+/* ============================================
+   TAMIL CALENDAR FLOATING BUTTON & MODAL
+   ============================================ */
+.calendar-float {
+    position: fixed;
+    bottom: 100px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--ct-gold), var(--ct-gold-dark));
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(201, 151, 61, 0.4);
+    z-index: 998;
+    transition: all 0.3s ease;
+}
+
+.calendar-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(201, 151, 61, 0.6);
+}
+
+.calendar-float svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--ct-dark-maroon);
+}
+
+.calendar-label {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 0.5rem;
+    color: var(--ct-dark-maroon);
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+/* Calendar Modal */
+.calendar-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.calendar-modal.active {
+    display: flex;
+}
+
+.calendar-modal-content {
+    background: linear-gradient(135deg, var(--ct-dark-maroon), var(--ct-maroon));
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    border: 2px solid var(--ct-gold);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.calendar-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--ct-gold);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.calendar-close:hover {
+    transform: rotate(90deg);
+}
+
+.calendar-title {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 1.8rem;
+    color: var(--ct-gold);
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.calendar-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    color: var(--ct-cream);
+    text-align: center;
+    margin-bottom: 25px;
+    opacity: 0.8;
+}
+
+.calendar-months {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.calendar-month {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(201, 151, 61, 0.3);
+}
+
+.calendar-month h3 {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 1.1rem;
+    color: var(--ct-gold);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(201, 151, 61, 0.3);
+}
+
+.muhurtham-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.muhurtham-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 0.9rem;
+    color: var(--ct-cream);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.muhurtham-list li:last-child {
+    border-bottom: none;
+}
+
+.muhurtham-list .date {
+    background: var(--ct-gold);
+    color: var(--ct-dark-maroon);
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.muhurtham-list .day {
+    color: rgba(245, 230, 211, 0.7);
+    font-size: 0.8rem;
+    min-width: 60px;
+}
+
+.calendar-note {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 0.85rem;
+    color: rgba(245, 230, 211, 0.7);
+    text-align: center;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+/* Calendar Modal Responsive */
+@media (max-width: 768px) {
+    .calendar-modal-content {
+        padding: 20px;
+        max-height: 90vh;
+    }
+
+    .calendar-title {
+        font-size: 1.4rem;
+    }
+
+    .calendar-months {
+        grid-template-columns: 1fr;
+    }
+
+    .calendar-float {
+        bottom: 90px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .calendar-float svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .calendar-label {
+        display: none;
+    }
+}
