@@ -40,10 +40,10 @@
 
 /* Body styling for amenities page */
 body.amenities-page {
-    background: linear-gradient(180deg, 
-        var(--am-cream) 0%, 
-        var(--am-beige) 50%,
-        var(--am-cream) 100%);
+    background: linear-gradient(180deg,
+            var(--am-cream) 0%,
+            var(--am-beige) 50%,
+            var(--am-cream) 100%);
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
@@ -91,18 +91,33 @@ body.amenities-page::before {
 /* Background animations removed */
 
 @keyframes rotateMandala1 {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes rotateMandala2 {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes rotateMandala3 {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg); }
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 /* Overlay removed to show mandala background clearly */
@@ -113,9 +128,9 @@ body.amenities-page::before {
 .amenities-navbar {
     position: relative;
     z-index: 200;
-    background: linear-gradient(180deg, 
-        rgba(74, 21, 22, 0.98) 0%, 
-        rgba(45, 12, 13, 0.98) 100%);
+    background: linear-gradient(180deg,
+            rgba(74, 21, 22, 0.98) 0%,
+            rgba(45, 12, 13, 0.98) 100%);
     box-shadow: 0 4px 30px rgba(45, 12, 13, 0.4);
     padding: 10px 0;
 }
@@ -127,17 +142,15 @@ body.amenities-page::before {
     left: 0;
     right: 0;
     height: 8px;
-    background: repeating-linear-gradient(
-        90deg,
-        var(--am-gold) 0px,
-        var(--am-gold) 5px,
-        transparent 5px,
-        transparent 15px,
-        var(--am-maroon) 15px,
-        var(--am-maroon) 20px,
-        transparent 20px,
-        transparent 30px
-    );
+    background: repeating-linear-gradient(90deg,
+            var(--am-gold) 0px,
+            var(--am-gold) 5px,
+            transparent 5px,
+            transparent 15px,
+            var(--am-maroon) 15px,
+            var(--am-maroon) 20px,
+            transparent 20px,
+            transparent 30px);
     opacity: 0.7;
 }
 
@@ -215,11 +228,14 @@ body.amenities-page::before {
    HEADER WITH NAVIGATION
    ============================================ */
 .amenities-header {
-    position: relative;
-    z-index: 200;
-    background: linear-gradient(180deg, 
-        rgba(74, 21, 22, 0.98) 0%, 
-        rgba(45, 12, 13, 0.98) 100%);
+    position: fixed;
+    top: 40px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: linear-gradient(180deg,
+            rgba(74, 21, 22, 0.98) 0%,
+            rgba(45, 12, 13, 0.98) 100%);
     box-shadow: 0 4px 30px rgba(45, 12, 13, 0.4);
 }
 
@@ -230,17 +246,15 @@ body.amenities-page::before {
     left: 0;
     right: 0;
     height: 8px;
-    background: repeating-linear-gradient(
-        90deg,
-        var(--am-gold) 0px,
-        var(--am-gold) 5px,
-        transparent 5px,
-        transparent 15px,
-        var(--am-maroon) 15px,
-        var(--am-maroon) 20px,
-        transparent 20px,
-        transparent 30px
-    );
+    background: repeating-linear-gradient(90deg,
+            var(--am-gold) 0px,
+            var(--am-gold) 5px,
+            transparent 5px,
+            transparent 15px,
+            var(--am-maroon) 15px,
+            var(--am-maroon) 20px,
+            transparent 20px,
+            transparent 30px);
     opacity: 0.7;
 }
 
@@ -339,9 +353,9 @@ body.amenities-page::before {
     left: 50%;
     transform: translateX(-50%) translateY(10px);
     min-width: 180px;
-    background: linear-gradient(180deg, 
-        rgba(45, 12, 13, 0.98) 0%, 
-        rgba(74, 21, 22, 0.98) 100%);
+    background: linear-gradient(180deg,
+            rgba(45, 12, 13, 0.98) 0%,
+            rgba(74, 21, 22, 0.98) 100%);
     border: 1px solid rgba(201, 151, 61, 0.3);
     border-radius: 12px;
     padding: 10px 0;
@@ -360,10 +374,10 @@ body.amenities-page::before {
     left: 20px;
     right: 20px;
     height: 2px;
-    background: linear-gradient(90deg, 
-        transparent, 
-        var(--am-gold), 
-        transparent);
+    background: linear-gradient(90deg,
+            transparent,
+            var(--am-gold),
+            transparent);
     border-radius: 2px;
 }
 
@@ -419,10 +433,10 @@ body.amenities-page::before {
     display: block;
     margin: 0 15px;
     height: 1px;
-    background: linear-gradient(90deg, 
-        transparent, 
-        rgba(201, 151, 61, 0.2), 
-        transparent);
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(201, 151, 61, 0.2),
+            transparent);
 }
 
 .amenities-header .menu-toggle {
@@ -490,11 +504,11 @@ body.amenities-page::before {
     .amenities-navbar .container {
         padding: 0 20px;
     }
-    
+
     .amenities-navbar .nav-menu {
         gap: 20px;
     }
-    
+
     .amenities-navbar .nav-menu li a {
         font-size: 0.75rem;
         padding: 8px 10px;
@@ -505,15 +519,15 @@ body.amenities-page::before {
     .amenities-navbar .menu-toggle {
         display: flex;
     }
-    
+
     .amenities-navbar .nav-menu {
         position: fixed;
         top: 80px;
         left: 0;
         right: 0;
-        background: linear-gradient(180deg, 
-            rgba(74, 21, 22, 0.98) 0%, 
-            rgba(45, 12, 13, 0.98) 100%);
+        background: linear-gradient(180deg,
+                rgba(74, 21, 22, 0.98) 0%,
+                rgba(45, 12, 13, 0.98) 100%);
         flex-direction: column;
         gap: 0;
         padding: 20px;
@@ -522,18 +536,18 @@ body.amenities-page::before {
         transition: all 0.3s ease;
         z-index: 199;
     }
-    
+
     .amenities-navbar .nav-menu.active {
         transform: translateY(0);
         opacity: 1;
     }
-    
+
     .amenities-navbar .nav-menu li a {
         font-size: 0.9rem;
         padding: 15px 20px;
         border-bottom: 1px solid rgba(201, 151, 61, 0.2);
     }
-    
+
     .amenities-navbar .logo img {
         height: 50px;
     }
@@ -546,10 +560,10 @@ body.amenities-page::before {
     position: relative;
     z-index: 100;
     height: 300px;
-    background: linear-gradient(135deg, 
-        var(--am-dark-maroon) 0%, 
-        var(--am-maroon) 50%,
-        var(--am-brown) 100%);
+    background: linear-gradient(135deg,
+            var(--am-dark-maroon) 0%,
+            var(--am-maroon) 50%,
+            var(--am-brown) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -572,9 +586,9 @@ body.amenities-page::before {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center, 
-        transparent 0%, 
-        rgba(31, 14, 14, 0.4) 100%);
+    background: radial-gradient(circle at center,
+            transparent 0%,
+            rgba(31, 14, 14, 0.4) 100%);
 }
 
 .hero-content {
@@ -619,10 +633,10 @@ body.amenities-page::before {
     position: relative;
     z-index: 100;
     height: 300px;
-    background: linear-gradient(135deg, 
-        var(--am-dark-maroon) 0%, 
-        var(--am-maroon) 50%,
-        var(--am-brown) 100%);
+    background: linear-gradient(135deg,
+            var(--am-dark-maroon) 0%,
+            var(--am-maroon) 50%,
+            var(--am-brown) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -645,9 +659,9 @@ body.amenities-page::before {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center, 
-        transparent 0%, 
-        rgba(31, 14, 14, 0.4) 100%);
+    background: radial-gradient(circle at center,
+            transparent 0%,
+            rgba(31, 14, 14, 0.4) 100%);
 }
 
 .hero-content {
@@ -698,7 +712,7 @@ body.amenities-page::before {
 /* Section Intro */
 .section-intro {
     text-align: center;
-    padding: 60px 40px 50px;
+    padding: 160px 40px 50px;
 }
 
 .mandala-divider {
@@ -712,10 +726,10 @@ body.amenities-page::before {
 .divider-line {
     width: 150px;
     height: 2px;
-    background: linear-gradient(90deg, 
-        transparent 0%, 
-        var(--am-gold) 50%, 
-        transparent 100%);
+    background: linear-gradient(90deg,
+            transparent 0%,
+            var(--am-gold) 50%,
+            transparent 100%);
 }
 
 .divider-mandala {
@@ -760,18 +774,12 @@ body.amenities-page::before {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 90px;
-    min-height: 400px;
-    max-height: 500px;
+    gap: 120px;
+    min-height: 550px;
+    max-height: 800px;
     position: relative;
     overflow: visible;
-    background: transparent;
-    opacity: 1;
-    transform: translateY(0);
-    transition: all 0.5s ease;
-    border-radius: 0;
-    box-shadow: none;
-    padding: 30px 60px;
+    padding: 60px 80px;
     max-width: 1350px;
     margin-left: auto;
     margin-right: auto;
@@ -803,19 +811,19 @@ body.amenities-page::before {
 
 /* Featured Card Style - Same diamond shape as other cards */
 .amenity-card.featured {
-    min-height: 400px;
-    max-height: 500px;
+    min-height: 600px;
+    max-height: 900px;
     background: transparent;
 }
 
 /* Grand Marriage Hall - Diamond Shape like others */
 .amenity-card.featured .card-image {
-    width: 340px;
-    height: 340px;
-    min-width: 340px;
+    width: 420px;
+    height: 420px;
+    min-width: 420px;
     transform: rotate(45deg);
     border-radius: 22px;
-    box-shadow: 
+    box-shadow:
         0 20px 50px rgba(74, 21, 22, 0.3),
         0 0 0 5px var(--am-gold),
         0 0 0 10px rgba(74, 21, 22, 0.15);
@@ -852,38 +860,42 @@ body.amenities-page::before {
 
 .featured-badge {
     position: absolute;
-    top: 25px;
-    left: 25px;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
     background: linear-gradient(135deg, var(--am-gold), var(--am-gold-dark));
     color: var(--am-dark-maroon);
-    padding: 12px 25px;
+    padding: 10px 22px;
     border-radius: 30px;
     font-family: 'Cinzel', serif;
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 0.85rem;
+    font-weight: 700;
     letter-spacing: 1px;
-    z-index: 15;
+    z-index: 50;
     box-shadow: 0 8px 25px rgba(201, 151, 61, 0.4);
+    pointer-events: none;
+    white-space: nowrap;
 }
 
-/* Move featured badge to right for even cards */
+/* Remove specific desktop positioning for child index since we use center alignment now */
 .amenity-card:nth-child(even) .featured-badge {
-    left: auto;
-    right: 25px;
+    left: 50%;
+    right: auto;
 }
 
 /* Card Image - Diamond Shape */
 .card-image {
     position: relative;
-    width: 340px;
-    height: 340px;
-    min-width: 340px;
+    width: 420px;
+    height: 420px;
+    min-width: 420px;
     flex-shrink: 0;
     overflow: hidden;
     z-index: 5;
     transform: rotate(45deg);
     border-radius: 22px;
-    box-shadow: 
+    box-shadow:
         0 20px 50px rgba(74, 21, 22, 0.3),
         0 0 0 5px var(--am-gold),
         0 0 0 10px rgba(74, 21, 22, 0.15);
@@ -907,7 +919,7 @@ body.amenities-page::before {
 /* Zoom effect on hover */
 .amenity-card:hover .card-image {
     transform: rotate(45deg) scale(1.05);
-    box-shadow: 
+    box-shadow:
         0 25px 60px rgba(74, 21, 22, 0.4),
         0 0 0 5px var(--am-gold-light),
         0 0 0 10px rgba(201, 151, 61, 0.25);
@@ -920,9 +932,9 @@ body.amenities-page::before {
 .card-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, 
-        rgba(74, 21, 22, 0.08) 0%, 
-        rgba(45, 12, 13, 0.2) 100%);
+    background: linear-gradient(135deg,
+            rgba(74, 21, 22, 0.08) 0%,
+            rgba(45, 12, 13, 0.2) 100%);
     pointer-events: none;
     transition: background 0.3s ease;
     transform: rotate(-45deg);
@@ -933,9 +945,9 @@ body.amenities-page::before {
 }
 
 .amenity-card:hover .card-overlay {
-    background: linear-gradient(135deg, 
-        rgba(74, 21, 22, 0.02) 0%, 
-        rgba(201, 151, 61, 0.12) 100%);
+    background: linear-gradient(135deg,
+            rgba(74, 21, 22, 0.02) 0%,
+            rgba(201, 151, 61, 0.12) 100%);
 }
 
 /* Card Icon - positioned at bottom center of diamond */
@@ -951,7 +963,7 @@ body.amenities-page::before {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 
+    box-shadow:
         0 8px 25px rgba(0, 0, 0, 0.3),
         0 0 0 3px var(--am-cream);
     z-index: 20;
@@ -966,7 +978,7 @@ body.amenities-page::before {
 
 .amenity-card:hover .card-icon {
     transform: translateX(-50%) scale(1.15) rotate(10deg);
-    box-shadow: 
+    box-shadow:
         0 12px 35px rgba(201, 151, 61, 0.6),
         0 0 0 4px var(--am-cream);
 }
@@ -1001,17 +1013,17 @@ body.amenities-page::before {
     background: rgba(255, 255, 255, 0.6);
     border: 3px solid transparent;
     border-radius: 15px;
-    background-image: 
+    background-image:
         linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
-        linear-gradient(135deg, 
-            var(--am-gold) 0%, 
-            var(--am-gold-light) 25%, 
-            #fff5d4 50%, 
-            var(--am-gold-light) 75%, 
+        linear-gradient(135deg,
+            var(--am-gold) 0%,
+            var(--am-gold-light) 25%,
+            #fff5d4 50%,
+            var(--am-gold-light) 75%,
             var(--am-gold) 100%);
     background-origin: border-box;
     background-clip: padding-box, border-box;
-    box-shadow: 
+    box-shadow:
         0 10px 30px rgba(74, 21, 22, 0.1),
         0 0 15px rgba(201, 151, 61, 0.3),
         0 0 30px rgba(201, 151, 61, 0.15),
@@ -1020,15 +1032,18 @@ body.amenities-page::before {
 }
 
 @keyframes shimmerBorder {
-    0%, 100% {
-        box-shadow: 
+
+    0%,
+    100% {
+        box-shadow:
             0 10px 30px rgba(74, 21, 22, 0.1),
             0 0 15px rgba(201, 151, 61, 0.3),
             0 0 30px rgba(201, 151, 61, 0.15),
             inset 0 0 20px rgba(201, 151, 61, 0.05);
     }
+
     50% {
-        box-shadow: 
+        box-shadow:
             0 10px 30px rgba(74, 21, 22, 0.1),
             0 0 25px rgba(201, 151, 61, 0.5),
             0 0 50px rgba(201, 151, 61, 0.25),
@@ -1044,12 +1059,12 @@ body.amenities-page::before {
     left: 0;
     width: 4px;
     height: 70%;
-    background: linear-gradient(180deg, 
-        transparent 0%,
-        var(--am-gold) 20%,
-        var(--am-maroon) 50%,
-        var(--am-gold) 80%,
-        transparent 100%);
+    background: linear-gradient(180deg,
+            transparent 0%,
+            var(--am-gold) 20%,
+            var(--am-maroon) 50%,
+            var(--am-gold) 80%,
+            transparent 100%);
     border-radius: 2px;
 }
 
@@ -1062,12 +1077,12 @@ body.amenities-page::before {
     left: auto;
     width: 4px;
     height: 70%;
-    background: linear-gradient(180deg, 
-        transparent 0%,
-        var(--am-gold) 20%,
-        var(--am-maroon) 50%,
-        var(--am-gold) 80%,
-        transparent 100%);
+    background: linear-gradient(180deg,
+            transparent 0%,
+            var(--am-gold) 20%,
+            var(--am-maroon) 50%,
+            var(--am-gold) 80%,
+            transparent 100%);
     border-radius: 2px;
 }
 
@@ -1172,9 +1187,9 @@ body.amenities-page::before {
 
 .feature-tag {
     padding: 8px 16px;
-    background: linear-gradient(135deg, 
-        rgba(74, 21, 22, 0.1) 0%, 
-        rgba(74, 21, 22, 0.05) 100%);
+    background: linear-gradient(135deg,
+            rgba(74, 21, 22, 0.1) 0%,
+            rgba(74, 21, 22, 0.05) 100%);
     border: 1px solid rgba(74, 21, 22, 0.2);
     border-radius: 25px;
     font-family: 'Lato', sans-serif;
@@ -1190,23 +1205,34 @@ body.amenities-page::before {
     animation: tagPop 0.4s ease forwards;
     animation-delay: 0s;
 }
+
 .amenity-card:hover .feature-tag:nth-child(2) {
     animation: tagPop 0.4s ease forwards;
     animation-delay: 0.1s;
 }
+
 .amenity-card:hover .feature-tag:nth-child(3) {
     animation: tagPop 0.4s ease forwards;
     animation-delay: 0.2s;
 }
+
 .amenity-card:hover .feature-tag:nth-child(4) {
     animation: tagPop 0.4s ease forwards;
     animation-delay: 0.3s;
 }
 
 @keyframes tagPop {
-    0% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-5px) scale(1.08); }
-    100% { transform: translateY(-3px) scale(1.02); }
+    0% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-5px) scale(1.08);
+    }
+
+    100% {
+        transform: translateY(-3px) scale(1.02);
+    }
 }
 
 .feature-tag:hover {
@@ -1223,9 +1249,9 @@ body.amenities-page::before {
     text-align: center;
     padding: 80px 40px;
     margin-top: 20px;
-    background: linear-gradient(180deg, 
-        var(--am-beige) 0%, 
-        var(--am-cream) 100%);
+    background: linear-gradient(180deg,
+            var(--am-beige) 0%,
+            var(--am-cream) 100%);
     position: relative;
 }
 
@@ -1243,12 +1269,12 @@ body.amenities-page::before {
 }
 
 .feature-item {
-    background: linear-gradient(180deg, 
-        rgba(255, 255, 255, 0.95) 0%, 
-        rgba(245, 230, 211, 0.9) 100%);
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.95) 0%,
+            rgba(245, 230, 211, 0.9) 100%);
     border-radius: 15px;
     padding: 30px 20px;
-    box-shadow: 
+    box-shadow:
         0 10px 30px rgba(74, 21, 22, 0.1),
         0 0 0 1px rgba(212, 168, 83, 0.2);
     transition: all 0.3s ease;
@@ -1258,7 +1284,7 @@ body.amenities-page::before {
 
 .feature-item:hover {
     transform: translateY(-8px);
-    box-shadow: 
+    box-shadow:
         0 20px 50px rgba(74, 21, 22, 0.2),
         0 0 0 2px rgba(212, 168, 83, 0.4);
 }
@@ -1304,10 +1330,10 @@ body.amenities-page::before {
    CTA SECTION
    ============================================ */
 .cta-section {
-    background: linear-gradient(135deg, 
-        var(--am-dark-maroon) 0%, 
-        var(--am-maroon) 50%,
-        var(--am-brown) 100%);
+    background: linear-gradient(135deg,
+            var(--am-dark-maroon) 0%,
+            var(--am-maroon) 50%,
+            var(--am-brown) 100%);
     padding: 80px 40px;
     text-align: center;
     position: relative;
@@ -1345,7 +1371,7 @@ body.amenities-page::before {
     opacity: 0.95;
 }
 
-.cta-content > p:last-of-type {
+.cta-content>p:last-of-type {
     font-family: 'Lato', sans-serif;
     font-size: 1.15rem;
     color: rgba(255, 255, 255, 0.9);
@@ -1387,9 +1413,9 @@ body.amenities-page::before {
    FOOTER
    ============================================ */
 .amenities-footer {
-    background: linear-gradient(180deg, 
-        var(--am-dark-maroon) 0%, 
-        #1a0a0a 100%);
+    background: linear-gradient(180deg,
+            var(--am-dark-maroon) 0%,
+            #1a0a0a 100%);
     padding: 50px;
     text-align: center;
     position: relative;
@@ -1403,10 +1429,10 @@ body.amenities-page::before {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, 
-        transparent 0%,
-        var(--am-gold) 50%,
-        transparent 100%);
+    background: linear-gradient(90deg,
+            transparent 0%,
+            var(--am-gold) 50%,
+            transparent 100%);
 }
 
 .footer-content p {
@@ -1432,6 +1458,7 @@ body.amenities-page .whatsapp-float {
         opacity: 0;
         transform: translateY(50px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1439,23 +1466,69 @@ body.amenities-page .whatsapp-float {
 }
 
 /* Staggered animations for cards */
-.amenity-card:nth-child(1) { transition-delay: 0.1s; }
-.amenity-card:nth-child(2) { transition-delay: 0.15s; }
-.amenity-card:nth-child(3) { transition-delay: 0.2s; }
-.amenity-card:nth-child(4) { transition-delay: 0.25s; }
-.amenity-card:nth-child(5) { transition-delay: 0.3s; }
-.amenity-card:nth-child(6) { transition-delay: 0.35s; }
-.amenity-card:nth-child(7) { transition-delay: 0.4s; }
-.amenity-card:nth-child(8) { transition-delay: 0.45s; }
-.amenity-card:nth-child(9) { transition-delay: 0.5s; }
-.amenity-card:nth-child(10) { transition-delay: 0.55s; }
+.amenity-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
 
-.feature-item:nth-child(1) { transition-delay: 0.1s; }
-.feature-item:nth-child(2) { transition-delay: 0.15s; }
-.feature-item:nth-child(3) { transition-delay: 0.2s; }
-.feature-item:nth-child(4) { transition-delay: 0.25s; }
-.feature-item:nth-child(5) { transition-delay: 0.3s; }
-.feature-item:nth-child(6) { transition-delay: 0.35s; }
+.amenity-card:nth-child(2) {
+    transition-delay: 0.15s;
+}
+
+.amenity-card:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.amenity-card:nth-child(4) {
+    transition-delay: 0.25s;
+}
+
+.amenity-card:nth-child(5) {
+    transition-delay: 0.3s;
+}
+
+.amenity-card:nth-child(6) {
+    transition-delay: 0.35s;
+}
+
+.amenity-card:nth-child(7) {
+    transition-delay: 0.4s;
+}
+
+.amenity-card:nth-child(8) {
+    transition-delay: 0.45s;
+}
+
+.amenity-card:nth-child(9) {
+    transition-delay: 0.5s;
+}
+
+.amenity-card:nth-child(10) {
+    transition-delay: 0.55s;
+}
+
+.feature-item:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.feature-item:nth-child(2) {
+    transition-delay: 0.15s;
+}
+
+.feature-item:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.feature-item:nth-child(4) {
+    transition-delay: 0.25s;
+}
+
+.feature-item:nth-child(5) {
+    transition-delay: 0.3s;
+}
+
+.feature-item:nth-child(6) {
+    transition-delay: 0.35s;
+}
 
 /* ============================================
    RESPONSIVE DESIGN
@@ -1468,78 +1541,79 @@ body.amenities-page .whatsapp-float {
         max-height: none;
         padding: 25px;
     }
-    
+
     .card-image {
         width: 300px;
         height: 300px;
         min-width: 300px;
     }
-    
+
     .amenity-card.featured .card-image {
         width: 300px;
         height: 300px;
         min-width: 300px;
     }
-    
+
     .card-content {
         padding: 25px 35px;
     }
-    
+
     .card-title {
         font-size: 1.5rem;
     }
-    
+
     .card-description {
         font-size: 0.95rem;
     }
 }
 
 @media (max-width: 1200px) {
+
     body.amenities-page::before,
     body.amenities-page::after {
         width: 150px;
         background-size: 150px auto;
     }
-    
+
     .amenities-grid {
         gap: 35px;
         padding: 30px 15px;
     }
-    
+
     .features-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-    
+
     .amenity-card {
         padding: 20px;
     }
-    
+
     .card-image {
         width: 280px;
         height: 280px;
         min-width: 280px;
     }
-    
+
     .amenity-card.featured .card-image {
         width: 280px;
         height: 280px;
         min-width: 280px;
     }
-    
+
     .card-content {
         padding: 20px 30px;
     }
-    
+
     .card-title {
         font-size: 1.4rem;
     }
-    
+
     .card-icon {
         width: 50px;
         height: 50px;
         bottom: -20px;
     }
-    
+
     .card-icon svg {
         width: 22px;
         height: 22px;
@@ -1548,17 +1622,18 @@ body.amenities-page .whatsapp-float {
 
 /* Tablet */
 @media (max-width: 1024px) {
+
     body.amenities-page::before,
     body.amenities-page::after {
         width: 100px;
         background-size: 100px auto;
         opacity: 0.7;
     }
-    
+
     .amenities-main {
         padding: 20px 0;
     }
-    
+
     .amenities-grid {
         gap: 30px;
         padding: 25px 15px;
@@ -1572,7 +1647,7 @@ body.amenities-page .whatsapp-float {
         padding: 30px 20px 40px;
         text-align: center;
     }
-    
+
     /* Diamond image for tablet */
     .card-image {
         width: 220px;
@@ -1580,7 +1655,7 @@ body.amenities-page .whatsapp-float {
         min-width: 220px;
         margin-bottom: 30px;
     }
-    
+
     /* Featured card diamond on tablet */
     .amenity-card.featured .card-image {
         width: 220px;
@@ -1588,25 +1663,25 @@ body.amenities-page .whatsapp-float {
         min-width: 220px;
         margin-bottom: 30px;
     }
-    
+
     .card-content {
         width: 100%;
         padding: 20px 15px;
     }
-    
+
     .card-title {
         font-size: 1.35rem;
     }
-    
+
     .card-title::after {
         display: none;
     }
-    
+
     .card-description {
         font-size: 0.9rem;
         line-height: 1.6;
     }
-    
+
     .card-description-tamil {
         font-size: 0.85rem;
         text-align: center !important;
@@ -1617,19 +1692,19 @@ body.amenities-page .whatsapp-float {
         border-top: 2px solid var(--am-gold);
         padding-top: 10px;
     }
-    
+
     /* Hide side mandalas on tablet */
     .amenity-card:nth-child(odd)::before,
     .amenity-card:nth-child(even)::before {
         display: none;
     }
-    
+
     /* Reset decorative lines for mobile */
     .amenity-card:nth-child(odd) .card-content::before,
     .amenity-card:nth-child(even) .card-content::before {
         display: none;
     }
-    
+
     /* Icon for tablet - centered below diamond */
     .card-icon {
         width: 42px;
@@ -1639,16 +1714,16 @@ body.amenities-page .whatsapp-float {
         right: auto !important;
         transform: translateX(-50%);
     }
-    
+
     .amenity-card:hover .card-icon {
         transform: translateX(-50%) scale(1.1) rotate(10deg);
     }
-    
+
     .amenity-card:nth-child(even) .card-icon {
         left: 50% !important;
         right: auto !important;
     }
-    
+
     /* Featured card icon */
     .amenity-card.featured .card-icon {
         bottom: 12px;
@@ -1656,16 +1731,16 @@ body.amenities-page .whatsapp-float {
         left: auto !important;
         transform: none;
     }
-    
+
     .amenity-card.featured:hover .card-icon {
         transform: scale(1.1) rotate(10deg);
     }
-    
+
     .card-icon svg {
         width: 20px;
         height: 20px;
     }
-    
+
     .card-features {
         justify-content: center;
     }
@@ -1678,44 +1753,45 @@ body.amenities-page .whatsapp-float {
         grid-template-columns: repeat(3, 1fr);
         gap: 15px;
     }
-    
+
     .feature-item {
         padding: 25px 15px;
     }
-    
+
 }
 
 /* Mobile Landscape / Small Tablet */
 @media (max-width: 768px) {
+
     body.amenities-page::before,
     body.amenities-page::after {
         width: 60px;
         background-size: 60px auto;
         opacity: 0.5;
     }
-    
+
     /* Mobile Navigation */
     .amenities-nav {
         padding: 10px 15px;
     }
-    
+
     .nav-logo img {
         height: 50px;
     }
-    
+
     .amenities-header .menu-toggle {
         display: flex;
     }
-    
+
     .amenities-header .nav-menu {
         position: fixed;
         top: 0;
         right: -100%;
         width: 280px;
         height: 100vh;
-        background: linear-gradient(180deg, 
-            var(--am-dark-maroon) 0%, 
-            var(--am-maroon) 100%);
+        background: linear-gradient(180deg,
+                var(--am-dark-maroon) 0%,
+                var(--am-maroon) 100%);
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -1724,11 +1800,11 @@ body.amenities-page .whatsapp-float {
         z-index: 1000;
         box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
     }
-    
+
     .amenities-header .nav-menu.active {
         right: 0;
     }
-    
+
     .amenities-header .nav-menu li a {
         font-size: 1rem;
         padding: 15px 25px;
@@ -1779,11 +1855,15 @@ body.amenities-page .whatsapp-float {
         padding-left: 20px;
     }
 
+    .section-intro {
+        padding: 120px 20px 40px;
+    }
+
     .page-title {
         font-size: 1.4rem;
         letter-spacing: 2px;
     }
-    
+
     .page-title-tamil {
         font-size: 0.95rem;
     }
@@ -1792,71 +1872,74 @@ body.amenities-page .whatsapp-float {
         gap: 25px;
         padding: 20px 10px;
     }
-    
+
     .amenity-card {
         padding: 25px 15px 35px;
+        flex-direction: column !important;
+        text-align: center;
+        margin-bottom: 50px;
     }
-    
+
     .card-image {
-        width: 180px;
-        height: 180px;
-        min-width: 180px;
-        margin-bottom: 25px;
+        width: 300px;
+        height: 300px;
+        min-width: 300px;
+        margin-bottom: 35px;
         border-radius: 15px;
-        box-shadow: 
+        box-shadow:
             0 15px 35px rgba(74, 21, 22, 0.25),
             0 0 0 3px var(--am-gold);
     }
-    
+
     .amenity-card.featured .card-image {
-        width: 180px;
-        height: 180px;
-        min-width: 180px;
-        margin-bottom: 25px;
+        width: 320px;
+        height: 320px;
+        min-width: 320px;
+        margin-bottom: 40px;
     }
-    
+
     .card-content {
         padding: 15px 10px;
     }
-    
+
     .card-title {
         font-size: 1.25rem;
         margin-bottom: 5px;
     }
-    
+
     .card-title-tamil {
         font-size: 0.85rem;
         margin-bottom: 12px;
     }
-    
+
     .card-description {
         font-size: 0.85rem;
         line-height: 1.6;
         margin-bottom: 8px;
     }
-    
+
     .card-description-tamil {
         font-size: 0.8rem;
         margin-bottom: 15px;
     }
-    
+
     .card-features {
         gap: 6px;
         flex-wrap: wrap;
         justify-content: center;
     }
-    
+
     .feature-tag {
         padding: 5px 10px;
         font-size: 0.75rem;
     }
-    
+
     .card-icon {
         width: 40px;
         height: 40px;
         bottom: -15px;
     }
-    
+
     .card-icon svg {
         width: 18px;
         height: 18px;
@@ -1867,15 +1950,15 @@ body.amenities-page .whatsapp-float {
         gap: 15px;
         padding: 0 15px;
     }
-    
+
     .feature-item {
         padding: 20px 12px;
     }
-    
+
     .feature-item .feature-icon {
         font-size: 1.8rem;
     }
-    
+
     .feature-item h4 {
         font-size: 0.9rem;
     }
@@ -1883,7 +1966,7 @@ body.amenities-page .whatsapp-float {
     .section-main-title {
         font-size: 1.6rem;
     }
-    
+
     .section-main-tamil {
         font-size: 0.95rem;
     }
@@ -1897,113 +1980,115 @@ body.amenities-page .whatsapp-float {
         border-radius: 15px;
         margin: 0 15px;
     }
-    
+
     .additional-features {
         padding: 40px 15px;
     }
-    
+
 }
 
 /* Mobile Portrait */
 @media (max-width: 480px) {
+
     body.amenities-page::before,
     body.amenities-page::after {
         width: 40px;
         background-size: 40px auto;
         opacity: 0.4;
     }
-    
+
     .amenities-header {
+        top: 35px;
         padding: 12px 15px;
     }
-    
+
     .page-title {
         font-size: 1.1rem;
         letter-spacing: 1.5px;
     }
-    
+
     .page-title-tamil {
         font-size: 0.85rem;
     }
-    
+
     .section-intro {
         padding: 25px 10px 15px;
     }
-    
+
     .section-main-title {
         font-size: 1.3rem;
     }
-    
+
     .section-main-tamil {
         font-size: 0.8rem;
     }
-    
+
     .amenities-grid {
         gap: 20px;
         padding: 15px 8px;
     }
-    
+
     .amenity-card {
         padding: 20px 12px 30px;
         border-radius: 15px;
     }
-    
+
     .card-image {
         width: 160px;
         height: 160px;
         min-width: 160px;
         margin-bottom: 20px;
         border-radius: 12px;
-        box-shadow: 
+        box-shadow:
             0 12px 28px rgba(74, 21, 22, 0.2),
             0 0 0 2px var(--am-gold);
     }
-    
+
     .amenity-card.featured .card-image {
         width: 160px;
         height: 160px;
         min-width: 160px;
         margin-bottom: 20px;
     }
-    
+
     .card-content {
         padding: 12px 8px;
     }
-    
+
     .card-title {
         font-size: 1.1rem;
     }
-    
+
     .card-title-tamil {
         font-size: 0.8rem;
         margin-bottom: 10px;
     }
-    
+
     .card-description {
         font-size: 0.8rem;
         line-height: 1.5;
     }
-    
+
     .card-description-tamil {
         font-size: 0.75rem;
         padding-top: 8px;
     }
-    
+
     .card-features {
         gap: 4px;
     }
-    
+
     .feature-tag {
         padding: 4px 8px;
         font-size: 0.65rem;
     }
-    
+
     .card-icon {
         width: 35px;
         height: 35px;
         bottom: -12px;
     }
-    
+
     .card-icon svg {
         width: 16px;
         height: 16px;
@@ -2026,7 +2111,7 @@ body.amenities-page .whatsapp-float {
     .feature-item h4 {
         font-size: 0.75rem;
     }
-    
+
     .feature-item .tamil-text {
         font-size: 0.7rem;
     }
@@ -2035,28 +2120,28 @@ body.amenities-page .whatsapp-float {
         padding: 12px 20px;
         font-size: 0.85rem;
     }
-    
+
     .additional-features {
         padding: 30px 10px;
     }
-    
+
     .cta-section {
         margin: 0 10px;
         padding: 30px 15px;
     }
-    
+
     .cta-content h2 {
         font-size: 1.3rem;
     }
-    
+
     .cta-content p {
         font-size: 0.9rem;
     }
-    
+
     .footer-content {
         padding: 20px 15px;
     }
-    
+
     .footer-content p {
         font-size: 0.8rem;
     }
@@ -2067,16 +2152,16 @@ body.amenities-page .whatsapp-float {
     .page-title {
         font-size: 0.95rem;
     }
-    
+
     .amenities-grid {
         gap: 15px;
         padding: 10px 5px;
     }
-    
+
     .amenity-card {
         padding: 15px 10px 25px;
     }
-    
+
     .card-image {
         width: 140px;
         height: 140px;
@@ -2084,38 +2169,38 @@ body.amenities-page .whatsapp-float {
         margin-bottom: 18px;
         border-radius: 10px;
     }
-    
+
     .amenity-card.featured .card-image {
         width: 140px;
         height: 140px;
         min-width: 140px;
         margin-bottom: 18px;
     }
-    
+
     .card-title {
         font-size: 1rem;
     }
-    
+
     .card-description {
         font-size: 0.75rem;
     }
-    
+
     .feature-tag {
         padding: 3px 6px;
         font-size: 0.6rem;
     }
-    
+
     .card-icon {
         width: 30px;
         height: 30px;
         bottom: -10px;
     }
-    
+
     .card-icon svg {
         width: 14px;
         height: 14px;
     }
-    
+
     .features-grid {
         grid-template-columns: 1fr;
         gap: 10px;
@@ -2134,9 +2219,9 @@ body.amenities-page::-webkit-scrollbar-track {
 }
 
 body.amenities-page::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, 
-        var(--am-maroon), 
-        var(--am-dark-maroon));
+    background: linear-gradient(180deg,
+            var(--am-maroon),
+            var(--am-dark-maroon));
     border-radius: 5px;
 }
 
@@ -2144,3 +2229,212 @@ body.amenities-page::-webkit-scrollbar-thumb:hover {
     background: var(--am-dark-maroon);
 }
 
+/* ============================================
+   TAMIL CALENDAR FLOATING BUTTON & MODAL
+   ============================================ */
+.calendar-float {
+    position: fixed;
+    bottom: 100px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--am-gold), var(--am-gold-dark));
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(201, 151, 61, 0.4);
+    z-index: 998;
+    transition: all 0.3s ease;
+}
+
+.calendar-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(201, 151, 61, 0.6);
+}
+
+.calendar-float svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--am-dark-maroon);
+}
+
+.calendar-label {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 0.5rem;
+    color: var(--am-dark-maroon);
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+/* Calendar Modal */
+.calendar-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.calendar-modal.active {
+    display: flex;
+}
+
+.calendar-modal-content {
+    background: linear-gradient(135deg, var(--am-dark-maroon), var(--am-maroon));
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    border: 2px solid var(--am-gold);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.calendar-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--am-gold);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.calendar-close:hover {
+    transform: rotate(90deg);
+}
+
+.calendar-title {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 1.8rem;
+    color: var(--am-gold);
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.calendar-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    color: var(--am-cream);
+    text-align: center;
+    margin-bottom: 25px;
+    opacity: 0.8;
+}
+
+.calendar-months {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.calendar-month {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(201, 151, 61, 0.3);
+}
+
+.calendar-month h3 {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 1.1rem;
+    color: var(--am-gold);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(201, 151, 61, 0.3);
+}
+
+.muhurtham-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.muhurtham-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 0.9rem;
+    color: var(--am-cream);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.muhurtham-list li:last-child {
+    border-bottom: none;
+}
+
+.muhurtham-list .date {
+    background: var(--am-gold);
+    color: var(--am-dark-maroon);
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.muhurtham-list .day {
+    color: rgba(245, 230, 211, 0.7);
+    font-size: 0.8rem;
+    min-width: 60px;
+}
+
+.calendar-note {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 0.85rem;
+    color: rgba(245, 230, 211, 0.7);
+    text-align: center;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+/* Calendar Modal Responsive */
+@media (max-width: 768px) {
+    .calendar-modal-content {
+        padding: 20px;
+        max-height: 90vh;
+    }
+
+    .calendar-title {
+        font-size: 1.4rem;
+    }
+
+    .calendar-months {
+        grid-template-columns: 1fr;
+    }
+
+    .calendar-float {
+        bottom: 90px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .calendar-float svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .calendar-label {
+        display: none;
+    }
+}
