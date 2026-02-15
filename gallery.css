@@ -1537,7 +1537,7 @@ body.gallery-page::-webkit-scrollbar-thumb:hover {
     }
 
     .calendar-float {
-        bottom: 90px;
+        bottom: 120px;
         right: 15px;
         width: 50px;
         height: 50px;

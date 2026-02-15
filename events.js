@@ -2,46 +2,46 @@
 // EVENTS PAGE JAVASCRIPT - FAST & SMOOTH
 // ============================================
 
-document.addEventListener('DOMContentLoaded', function() {
-    
+document.addEventListener('DOMContentLoaded', function () {
+
     // ============================================
     // MOBILE MENU TOGGLE
     // ============================================
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.querySelector('.nav-menu');
-    
+
     if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', function() {
+        menuToggle.addEventListener('click', function () {
             navMenu.classList.toggle('active');
             menuToggle.classList.toggle('active');
         });
-        
+
         // Close menu when clicking on a link (except dropdown toggles)
         navMenu.querySelectorAll('a:not(.dropdown-toggle)').forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function () {
                 navMenu.classList.remove('active');
                 menuToggle.classList.remove('active');
             });
         });
     }
-    
-    // ============================================
-    // DROPDOWN MENU TOGGLE FOR MOBILE
-    // ============================================
-    const navDropdowns = document.querySelectorAll('.nav-dropdown');
-    
-    navDropdowns.forEach(function(dropdown) {
-        const toggle = dropdown.querySelector('.dropdown-toggle');
-        
-        if (toggle) {
-            toggle.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    dropdown.classList.toggle('active');
-                }
-            });
-        }
-    });
+
+    // // ============================================
+    // // DROPDOWN MENU TOGGLE FOR MOBILE
+    // // ============================================
+    // const navDropdowns = document.querySelectorAll('.nav-dropdown');
+
+    // navDropdowns.forEach(function (dropdown) {
+    //     const toggle = dropdown.querySelector('.dropdown-toggle');
+
+    //     if (toggle) {
+    //         toggle.addEventListener('click', function (e) {
+    //             if (window.innerWidth <= 768) {
+    //                 e.preventDefault();
+    //                 dropdown.classList.toggle('active');
+    //             }
+    //         });
+    //     }
+    // });
 
     // ============================================
     // CHECK GSAP AVAILABILITY
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // EVENT CARDS - FAST FLIP ANIMATION
     // ============================================
     const eventCards = document.querySelectorAll('.event-card');
-    
+
     eventCards.forEach((card, index) => {
         // Set initial state
         gsap.set(card, {
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // SMOOTH PARALLAX FOR MANDALAS
     // ============================================
     const mandalas = document.querySelectorAll('.mandala-decor');
-    
+
     mandalas.forEach(mandala => {
         gsap.to(mandala, {
             scrollTrigger: {
@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
     eventCards.forEach(card => {
         const image = card.querySelector('.card-image img');
         const icon = card.querySelector('.card-icon');
-        
+
         card.addEventListener('mouseenter', () => {
             gsap.to(image, {
                 duration: 0.3,
@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         });
-        
+
         card.addEventListener('mouseleave', () => {
             gsap.to(image, {
                 duration: 0.25,
@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // BUTTON HOVER ANIMATIONS
     // ============================================
     const buttons = document.querySelectorAll('.card-btn, .btn');
-    
+
     buttons.forEach(btn => {
         btn.addEventListener('mouseenter', () => {
             gsap.to(btn, {
@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 ease: 'power2.out'
             });
         });
-        
+
         btn.addEventListener('mouseleave', () => {
             gsap.to(btn, {
                 duration: 0.15,
@@ -272,3 +272,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log('Events page - Fast animations initialized');
 });
+

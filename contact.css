@@ -37,6 +37,7 @@ body.contact-page {
             rgba(74, 21, 22, 0.98) 0%,
             rgba(45, 12, 13, 0.98) 100%);
     box-shadow: 0 4px 30px rgba(45, 12, 13, 0.4);
+    margin-top: 45px;
 }
 
 .contact-header::after {
@@ -782,6 +783,8 @@ body.contact-page {
 }
 
 @media (max-width: 768px) {
+
+
     .contact-header .menu-toggle {
         display: flex;
     }
@@ -802,6 +805,7 @@ body.contact-page {
         transition: right 0.4s ease;
         z-index: 1000;
         box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+
     }
 
     .contact-header .nav-menu.active {
@@ -1103,7 +1107,7 @@ body.contact-page {
     }
 
     .calendar-float {
-        bottom: 90px;
+        bottom: 120px;
         right: 15px;
         width: 50px;
         height: 50px;
