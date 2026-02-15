@@ -28,32 +28,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
-    // DROPDOWN MENU TOGGLE FOR MOBILE
-    // ============================================
-    const navDropdowns = document.querySelectorAll('.nav-dropdown');
-    
-    navDropdowns.forEach(function(dropdown) {
-        const toggle = dropdown.querySelector('.dropdown-toggle');
-        
-        if (toggle) {
-            toggle.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    dropdown.classList.toggle('active');
-                }
-            });
-        }
-    });
+    // // ============================================
+    // // DROPDOWN MENU TOGGLE FOR MOBILE
+    // // ============================================
+    // const navDropdowns = document.querySelectorAll('.nav-dropdown');
+
+    // navDropdowns.forEach(function (dropdown) {
+    //     const toggle = dropdown.querySelector('.dropdown-toggle');
+
+    //     if (toggle) {
+    //         toggle.addEventListener('click', function (e) {
+    //             if (window.innerWidth <= 768) {
+    //                 e.preventDefault();
+    //                 dropdown.classList.toggle('active');
+    //             }
+    //         });
+    //     }
+    // });
 
     // ============================================
     // GALLERY ITEMS ANIMATION
     // ============================================
     const galleryItems = document.querySelectorAll('.gallery-item');
-    
+
     galleryItems.forEach((item, index) => {
         // Initial animation on page load for visible items
-        gsap.fromTo(item, 
+        gsap.fromTo(item,
             {
                 opacity: 0,
                 y: 60,
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const filter = btn.dataset.filter;
-            
+
             // Update active state
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (emptyState) {
             if (visibleCount === 0) {
                 emptyState.style.display = 'block';
-                gsap.fromTo(emptyState, 
+                gsap.fromTo(emptyState,
                     { opacity: 0, y: 20 },
                     { opacity: 1, y: 0, duration: 0.4 }
                 );
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
         item.addEventListener('click', () => {
             visibleImages = getVisibleImages();
             currentImageIndex = visibleImages.indexOf(item);
-            
+
             openLightbox(item);
         });
     });
@@ -193,9 +193,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (lightboxImage) lightboxImage.alt = img.alt;
         if (lightboxTitle) lightboxTitle.textContent = title;
         if (lightboxSubtitle) lightboxSubtitle.textContent = subtitle;
-        
+
         updateCounter();
-        
+
         lightbox?.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 if (lightboxTitle) lightboxTitle.textContent = title;
                 if (lightboxSubtitle) lightboxSubtitle.textContent = subtitle;
-                
+
                 // Fade in
                 gsap.to(lightboxImage, {
                     opacity: 1,
@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // HERO SECTION PARALLAX
     // ============================================
     const heroSection = document.querySelector('.gallery-hero');
-    
+
     if (heroSection) {
         gsap.to('.gallery-hero .hero-content', {
             scrollTrigger: {
@@ -347,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // CTA SECTION ANIMATION
     // ============================================
     const ctaSection = document.querySelector('.gallery-cta');
-    
+
     if (ctaSection) {
         gsap.fromTo('.cta-content',
             {
@@ -395,7 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // HEADER SCROLL EFFECT - FIXED NAVBAR
     // ============================================
     const header = document.querySelector('.gallery-header');
-    
+
     // Initial check on page load
     if (window.scrollY > 80) {
         header?.classList.add('scrolled');
@@ -418,9 +418,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('load', () => {
         // Add loaded class to body
         document.body.classList.add('loaded');
-        
+
         // Refresh ScrollTrigger after all images are loaded
         ScrollTrigger.refresh();
     });
 });
+
 

@@ -4,14 +4,14 @@
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function() {
-    
+   
     // Register GSAP ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
 
     // ============================================
     // FAST INITIAL LOAD ANIMATIONS
     // ============================================
-    
+   
     // Header animation - immediate
     gsap.to('.nearby-header', {
         opacity: 1,
@@ -56,37 +56,37 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================
     // MANDALA PARALLAX & SPREADING EFFECT
     // ============================================
-    
+   
     const mandalas = document.querySelectorAll('.mandala-pattern');
     const mandalaSpread = document.querySelector('.mandala-spread');
-    
+   
     // Throttled scroll handler for performance
     let ticking = false;
-    
+   
     window.addEventListener('scroll', function() {
         if (!ticking) {
             window.requestAnimationFrame(function() {
                 const scrollY = window.scrollY;
                 const scrollPercent = scrollY / (document.body.scrollHeight - window.innerHeight);
-                
+               
                 // Rotate and move mandalas based on scroll
                 mandalas.forEach((mandala, index) => {
                     const speed = 0.03 + (index * 0.015);
                     const rotation = scrollY * speed;
                     const yOffset = scrollY * (0.08 + index * 0.03);
                     const scale = 1 + (scrollPercent * 0.2 * (index + 1) * 0.3);
-                    
+                   
                     mandala.style.transform = `rotate(${rotation}deg) translateY(${yOffset * (index % 2 === 0 ? 1 : -1)}px) scale(${scale})`;
                     mandala.style.opacity = 0.06 + (scrollPercent * 0.04);
                 });
-                
+               
                 // Spread effect - increase opacity and scale as user scrolls
                 if (mandalaSpread) {
                     const spreadOpacity = 0.3 + (scrollPercent * 0.4);
                     mandalaSpread.style.opacity = spreadOpacity;
                     mandalaSpread.style.transform = `scale(${1 + scrollPercent * 0.1})`;
                 }
-                
+               
                 ticking = false;
             });
             ticking = true;
@@ -96,20 +96,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================
     // CATEGORY FILTER FUNCTIONALITY
     // ============================================
-    
+   
     const filterButtons = document.querySelectorAll('.filter-btn');
     const attractionCards = document.querySelectorAll('.attraction-card');
 
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
             const filter = this.dataset.filter;
-            
+           
             // Update active button
             filterButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
 
             // Animate button
-            gsap.fromTo(this, 
+            gsap.fromTo(this,
                 { scale: 0.95 },
                 { scale: 1, duration: 0.2, ease: 'back.out(2)' }
             );
@@ -123,11 +123,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     card.style.display = 'block';
                     gsap.fromTo(card,
                         { opacity: 0, y: 30, scale: 0.9 },
-                        { 
-                            opacity: 1, 
-                            y: 0, 
-                            scale: 1, 
-                            duration: 0.3, 
+                        {
+                            opacity: 1,
+                            y: 0,
+                            scale: 1,
+                            duration: 0.3,
                             delay: index * 0.05,
                             ease: 'power2.out'
                         }
@@ -150,14 +150,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================
     // FAVORITE BUTTON FUNCTIONALITY
     // ============================================
-    
+   
     const favoriteButtons = document.querySelectorAll('.favorite-btn');
 
     favoriteButtons.forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
             this.classList.toggle('active');
-            
+           
             // Heart animation
             gsap.fromTo(this,
                 { scale: 0.7 },
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================
     // CARD HOVER ANIMATIONS
     // ============================================
-    
+   
     attractionCards.forEach(card => {
         const image = card.querySelector('.card-image img');
         const exploreBtn = card.querySelector('.explore-btn');
@@ -202,10 +202,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================
     // SCROLL-TRIGGERED ANIMATIONS - 2 CARDS AT A TIME
     // ============================================
-    
+   
     // Get all cards except first 2 (they animate on load)
     const scrollCards = document.querySelectorAll('.attraction-card:nth-child(n+3)');
-    
+   
     // Create Intersection Observer for scroll animation
     const cardObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
@@ -213,11 +213,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 const card = entry.target;
                 // Add small delay for staggered effect within pairs
                 const delay = (index % 2) * 0.1; // 0 or 0.1s
-                
+               
                 setTimeout(() => {
                     card.classList.add('animate-in');
                 }, delay * 1000);
-                
+               
                 // Stop observing once animated
                 cardObserver.unobserve(card);
             }
@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function() {
         threshold: 0.2,
         rootMargin: '0px 0px -50px 0px'
     });
-    
+   
     // Observe cards 3 onwards
     scrollCards.forEach(card => {
         cardObserver.observe(card);
@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================
     // FEATURED IMAGE PARALLAX
     // ============================================
-    
+   
     const featuredImage = document.querySelector('.featured-image img');
     if (featuredImage) {
         gsap.to(featuredImage, {
@@ -253,9 +253,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================
     // EXPLORE BUTTON RIPPLE EFFECT
     // ============================================
-    
+   
     const exploreBtns = document.querySelectorAll('.explore-btn');
-    
+   
     exploreBtns.forEach(btn => {
         btn.addEventListener('click', function(e) {
             // Create ripple
@@ -267,17 +267,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 pointer-events: none;
                 transform: scale(0);
             `;
-            
+           
             const rect = this.getBoundingClientRect();
             const size = Math.max(rect.width, rect.height);
             ripple.style.width = ripple.style.height = size + 'px';
             ripple.style.left = (e.clientX - rect.left - size/2) + 'px';
             ripple.style.top = (e.clientY - rect.top - size/2) + 'px';
-            
+           
             this.style.position = 'relative';
             this.style.overflow = 'hidden';
             this.appendChild(ripple);
-            
+           
             gsap.to(ripple, {
                 scale: 2,
                 opacity: 0,
@@ -291,13 +291,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================
     // SMOOTH SCROLL FOR BACK BUTTON
     // ============================================
-    
+   
     // Already using default link behavior
 
     // ============================================
     // PAGE VISIBILITY ANIMATION
     // ============================================
-    
+   
     document.addEventListener('visibilitychange', function() {
         if (!document.hidden) {
             // Refresh animations when page becomes visible again
@@ -308,10 +308,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================
     // LOADING COMPLETE
     // ============================================
-    
+   
     // Mark page as loaded
     document.body.classList.add('loaded');
-    
+   
     console.log('Nearby Attractions page loaded with fast animations!');
 });
 

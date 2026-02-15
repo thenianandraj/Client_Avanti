@@ -25,23 +25,23 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ============================================
-    // DROPDOWN MENU TOGGLE FOR MOBILE
-    // ============================================
-    const navDropdowns = document.querySelectorAll('.nav-dropdown');
+    // // ============================================
+    // // DROPDOWN MENU TOGGLE FOR MOBILE
+    // // ============================================
+    // const navDropdowns = document.querySelectorAll('.nav-dropdown');
 
-    navDropdowns.forEach(function (dropdown) {
-        const toggle = dropdown.querySelector('.dropdown-toggle');
+    // navDropdowns.forEach(function (dropdown) {
+    //     const toggle = dropdown.querySelector('.dropdown-toggle');
 
-        if (toggle) {
-            toggle.addEventListener('click', function (e) {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    dropdown.classList.toggle('active');
-                }
-            });
-        }
-    });
+    //     if (toggle) {
+    //         toggle.addEventListener('click', function (e) {
+    //             if (window.innerWidth <= 768) {
+    //                 e.preventDefault();
+    //                 dropdown.classList.toggle('active');
+    //             }
+    //         });
+    //     }
+    // });
 
     // Check if GSAP is available
     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
@@ -167,3 +167,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     console.log('Amenities page optimized animations initialized');
 });
+

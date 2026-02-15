@@ -65,14 +65,14 @@
                     </svg>
                     <span>Reserve Now</span>
                 </a>
-                <a href="https://maps.google.com/?q=Avanti+Mahal+Periyakulam" target="_blank"
-                    class="top-bar-btn direction-btn">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                        <circle cx="12" cy="10" r="3" />
-                    </svg>
-                    <span>Direction</span>
-                </a>
+                <!--<a href="https://maps.google.com/?q=Avanti+Mahal+Periyakulam" target="_blank"-->
+                <!--    class="top-bar-btn direction-btn">-->
+                <!--    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">-->
+                <!--        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />-->
+                <!--        <circle cx="12" cy="10" r="3" />-->
+                <!--    </svg>-->
+                <!--    <span>Direction</span>-->
+                <!--</a>-->
             </div>
         </div>
     </div>
@@ -437,6 +437,53 @@
         </svg>
     </a>
 
+    <script>
+        // Force header visibility and handle menu toggle locally as fallback
+        document.addEventListener('DOMContentLoaded', function () {
+            const header = document.querySelector('.home-header');
+            const toggle = document.getElementById('menuToggle');
+            const nav = document.querySelector('.nav-menu');
+
+            // Ensure header is visible
+            if (header) {
+                header.classList.add('visible');
+                header.style.opacity = '1';
+                header.style.transform = 'translateY(0)';
+            }
+
+            // Handle Toggle
+            if (toggle && nav) {
+                toggle.addEventListener('click', function (e) {
+                    e.stopPropagation(); // Prevent bubbling issues
+                    toggle.classList.toggle('active');
+                    nav.classList.toggle('active');
+                });
+
+                // Handle Mobile Dropdown ("Avanti World")
+                const dropdowns = document.querySelectorAll('.nav-dropdown');
+                dropdowns.forEach(dropdown => {
+                    const dropToggle = dropdown.querySelector('.dropdown-toggle');
+                    if (dropToggle) {
+                        dropToggle.addEventListener('click', function (e) {
+                            if (window.innerWidth <= 768) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                dropdown.classList.toggle('active');
+                            }
+                        });
+                    }
+                });
+
+                // Close when clicking links (but not dropdown toggle)
+                nav.querySelectorAll('a:not(.dropdown-toggle)').forEach(link => {
+                    link.addEventListener('click', () => {
+                        toggle.classList.remove('active');
+                        nav.classList.remove('active');
+                    });
+                });
+            }
+        });
+    </script>
     <script src="script.js"></script>
     <script>
         // Card Animation
